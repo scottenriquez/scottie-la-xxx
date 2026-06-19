@@ -1,0 +1,30 @@
+name: Build
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [ main ]
+jobs:
+  verify:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Installation
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Dependencies
+        run: npm ci
+      - name: Format
+        run: npm run format:check
+      - name: Lint
+        run: npm run lint -- --max-warnings=0
+      - name: Types
+        run: npm run typecheck
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build

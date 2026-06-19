@@ -1,0 +1,5 @@
+- Do not add comments without explicit approval.
+- Use single quotes and camel case for TypeScript.
+- Do not use any abbreviations for variable names (e.g. don't use `i`, use `index`).
+- Add unit tests where possible.
+- Provide plain English descriptions when you generate code and divide work into small, digestible tasks.
