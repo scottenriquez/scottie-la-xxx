@@ -12,6 +12,7 @@ export default defineConfig({
     alias: [
       { find: /.*\.svg$/, replacement: path.resolve(__dirname, 'src/test/mocks/Svg.tsx') },
       { find: '@theme/Heading', replacement: path.resolve(__dirname, 'src/test/mocks/Heading.tsx') },
+      { find: '@docusaurus/Link', replacement: path.resolve(__dirname, 'src/test/mocks/Link.tsx') },
       { find: '@site', replacement: path.resolve(__dirname, '.') },
     ],
   },

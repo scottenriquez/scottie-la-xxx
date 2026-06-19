@@ -1,0 +1,78 @@
+.heroWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 640px;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.heroSubtitle {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.25rem;
+}
+
+.heroTagline {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 1.75rem;
+}
+
+.heroLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.heroLink {
+  display: inline-flex;
+  color: var(--ifm-color-emphasis-600);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.heroLink:hover {
+  transform: scale(1.15);
+}
+
+.linkResume:hover {
+  color: #ff2736;
+}
+
+.linkBlog:hover {
+  color: #41a638;
+}
+
+.linkFootball:hover {
+  color: #76a831;
+}
+
+.linkGithub:hover {
+  color: #2ec3b9;
+}
+
+.linkLinkedin:hover {
+  color: #005cbb;
+}
