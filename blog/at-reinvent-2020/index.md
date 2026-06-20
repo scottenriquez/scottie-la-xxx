@@ -69,7 +69,7 @@ I haven’t been able to find much documentation on how to create templates othe
 
 As mentioned above, schemas are used to capture inputs. In the sample from GitHub, the only shared environment resource is a DynamoDB table, and the time to live specification is parameterized.
 
-```yaml title='/schema.yaml'
+```yaml title='schema.yaml'
 schema:
   format:
     openapi: '3.0.0'
@@ -89,7 +89,7 @@ schema:
 
 Defining `/infrastructure` or `/pipeline` sections of the Proton template requires a manifest to describe how exactly to interpret the infrastructure as code. I can't find any documentation for the accepted values, but the template indicates that templating engines like [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) are supported and other infrastructure as code options like CDK may be planned for the future.
 
-```yaml title='/manifest.yaml'
+```yaml title='manifest.yaml'
 infrastructure:
   templates:
     - file: 'cloudformation.yaml'
@@ -99,7 +99,7 @@ infrastructure:
 
 Lastly, a CloudFormation template is used to describe the infrastructure and DevOps automation like CodePipeline. Note the use of Jinja templating (specifically `environment.ttl_attribute`) to reference shared resources and input parameters.
 
-```yaml title='/cloudformation.yaml'
+```yaml title='cloudformation.yaml'
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This environment holds a simple DDB table shared between services.

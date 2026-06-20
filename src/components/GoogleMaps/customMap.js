@@ -7,9 +7,9 @@ export default function CustomMap({ defaultZoom, defaultCenter, markers }) {
   return (
     <APIProvider apiKey={getGoogleMapsAPIKey()}>
       <Map defaultCenter={defaultCenter} defaultZoom={defaultZoom} styles={styles}>
-        {markers.map(({ lat, lng }, i) => (
-          <InfoWindow key={i} position={{ lat, lng }} options={{ closeOnClick: false }} style={{ color: 'black' }}>
-            <p>{`(${lat}, ${lng})`}</p>
+        {markers.map(({ lat, lng }, index) => (
+          <InfoWindow key={index} position={{ lat, lng }} options={{ closeOnClick: false }} style={{ color: 'black' }}>
+            <p style={{ margin: 0, fontSize: '0.7rem' }}>{`(${lat}, ${lng})`}</p>
           </InfoWindow>
         ))}
       </Map>

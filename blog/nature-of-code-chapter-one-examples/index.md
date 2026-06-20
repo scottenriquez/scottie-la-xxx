@@ -60,7 +60,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector):
 
 To expand this example to the third dimension, additional variables called `zpos` and `zspeed` are required. Obviously, this approach does not scale well to $$n$$ dimensions since each needs new speed and position variables. While vectors alone don't expand the physics functionality (e.g., the circle's motion), they streamline and minimize the amount of code required to include new dimensions. In JavaScript, we can write a simple class to organize the components and implement vector operations such as addition.
 
-```javascript title='src/components/NatureOfCode/One/NVector/nVector.js'
+```javascript title='NatureOfCode/One/NVector/nVector.js'
 class NVector {
   constructor(...components) {
     this.components = components;
@@ -109,7 +109,7 @@ $$
 
 Vector subtraction behaves the same way as addition:
 
-```javascript title='src/components/NatureOfCode/One/NVector/nVector.js'
+```javascript title='NatureOfCode/One/NVector/nVector.js'
 // assumes that the second vector has the same dimensions as the first
 subtract(otherVector) {
   return new NVector(
@@ -120,7 +120,7 @@ subtract(otherVector) {
 
 For multiplication, there are both scalar and vector products:
 
-```javascript title='src/components/NatureOfCode/One/NVector/nVector.js'
+```javascript title='NatureOfCode/One/NVector/nVector.js'
 scale(scalar) {
   return new NVector(...this.components.map(component => component * scalar));
 }
@@ -202,7 +202,7 @@ const vectors = [
 
 Using our knowledge of vectors and a Vector class (`THREE.Vector3`, which is our graphics library's implementation of our `NVector` class above), we can expand the bouncing ball Processing example into the third dimension. First, we create a sphere with a random starting position vector within the bounds of our space (i.e., -50 to 50).
 
-```javascript title='src/components/NatureOfCode/One/BouncingSphere/boucingSphere.js'
+```javascript title='NatureOfCode/One/BouncingSphere/boucingSphere.js'
 const generateSphere = () => {
   const x = Math.random() * 100 - 50;
   const y = Math.random() * 100 - 50;
@@ -218,7 +218,7 @@ const generateSphere = () => {
 
 Similarly to the `draw` function in the two-dimensional example above, the `animate` function uses the screen's boundaries as a signal to invert the direction of the sphere's motion by negating the corresponding component in the velocity vector:
 
-```javascript title='src/components/NatureOfCode/One/BouncingSphere/sceneInit.js'
+```javascript title='NatureOfCode/One/BouncingSphere/sceneInit.js'
 generateVelocityVector() {
   const x = (this.isXPositiveDirection ? 1 : -1) * 15;
   const y = (this.isYPositiveDirection ? 1 : -1) * 15;
@@ -274,7 +274,7 @@ $$
 
 Implemented in JavaScript, this is:
 
-```javascript title='src/components/NatureOfCode/One/BouncingSphereWithAcceleration/sceneInit.js'
+```javascript title='NatureOfCode/One/BouncingSphereWithAcceleration/sceneInit.js'
 generateVelocityVector() {
   const x = (this.isXPositiveDirection ? 1 : -1) * 15;
   const y = (this.isYPositiveDirection ? 1 : -1) * 15;

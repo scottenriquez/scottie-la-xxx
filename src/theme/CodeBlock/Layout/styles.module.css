@@ -26,6 +26,7 @@
 .codeBlockTitleText {
   min-width: 0;
   overflow-wrap: anywhere;
+  font-family: var(--ifm-font-family-monospace);
 }
 
 .codeBlockTitle + .codeBlockContent .codeBlock {

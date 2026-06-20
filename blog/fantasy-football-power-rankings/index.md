@@ -54,7 +54,7 @@ Navigate to the root folder of the league's Gatsby site, and run `spr add <WEEK_
 
 The league-specific details exist in various JavaScript configuration files to maximize reusability. While the CLI is tightly-coupled with Gatsby, there's still much that can be reconfigured for other leagues.
 
-```javascript title='/lib/config/gatsby.js'
+```javascript title='lib/config/gatsby.js'
 const gatsby = {
   // used to determine if the user created a new branch
   mainBranchName: 'master',
@@ -67,7 +67,7 @@ const gatsby = {
 };
 ```
 
-```javascript title='/lib/config/aws.js'
+```javascript title='lib/config/aws.js'
 const awsConfig = {
   // S3 bucket
   bucketName: 'twiath-site-cdn',
@@ -76,14 +76,14 @@ const awsConfig = {
 };
 ```
 
-```javascript title='/lib/config/league.js'
+```javascript title='lib/config/league.js'
 const league = {
   // Sleeper league ID number
   id: '541384381865115648',
 };
 ```
 
-```javascript title='/lib/config/validAuthors.js'
+```javascript title='lib/config/validAuthors.js'
 const authors = {
   Scottie: 'Scottie Enriquez',
   Callen: 'Callen Trail',
@@ -100,7 +100,7 @@ const authors = {
 };
 ```
 
-```javascript title='/lib/config/validWeeks.js'
+```javascript title='lib/config/validWeeks.js'
 const weeks = {
   0: 'zero',
   1: 'one',

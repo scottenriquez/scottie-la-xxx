@@ -21,6 +21,12 @@ describe('LanguageIcon', () => {
     expect(container.querySelector('svg title')?.textContent).toBe('.NET');
   });
 
+  it('uses the OpenJDK icon for Java', () => {
+    const { container } = render(<LanguageIcon language="java" />);
+
+    expect(container.querySelector('svg title')?.textContent).toBe('OpenJDK');
+  });
+
   it('prefers the file extension in the title over the language', () => {
     const { container } = render(<LanguageIcon language="javascript" title="config.yaml" />);
 
