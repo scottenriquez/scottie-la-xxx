@@ -58,6 +58,8 @@
   --brand-green-rgb: 65, 166, 56;
   --brand-aqua: #2ec3b9;
   --brand-aqua-rgb: 46, 195, 185;
+  --brand-blue: #4f9bff;
+  --brand-blue-rgb: 79, 155, 255;
   --brand-text-glow: 0 0 10px rgba(var(--brand-green-rgb), 0.35), 0 0 24px rgba(var(--brand-green-rgb), 0.15);
   --accent-resume: #ff2736;
   --accent-blog: #41a638;
@@ -166,7 +168,6 @@ html {
 
 article img,
 article table {
-  border-radius: 8px;
   box-shadow:
     0 0 10px rgba(var(--brand-green-rgb), 0.22),
     0 0 24px rgba(var(--brand-green-rgb), 0.08);
@@ -196,6 +197,26 @@ article table td {
   margin: 0;
 }
 
+.markdown img.sleeper-avatar {
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
+  object-fit: cover;
+  margin: 0 0.4rem 0 0;
+  border-radius: 0.3em;
+  vertical-align: middle;
+  box-shadow: none;
+  filter: grayscale(100%);
+}
+
+.levelUp {
+  color: var(--ifm-color-primary);
+}
+
+.levelDown {
+  color: var(--accent-resume);
+}
+
 .markdown table {
   display: block;
   width: fit-content;
@@ -205,12 +226,11 @@ article table td {
 }
 
 article blockquote {
-  border-left: 4px solid var(--brand-aqua);
-  border-radius: 0 8px 8px 0;
-  background-color: rgba(var(--brand-aqua-rgb), 0.08);
+  border-left: 4px solid var(--brand-blue);
+  background-color: rgba(var(--brand-blue-rgb), 0.07);
   box-shadow:
-    0 0 10px rgba(var(--brand-aqua-rgb), 0.18),
-    0 0 24px rgba(var(--brand-aqua-rgb), 0.07);
+    0 0 4px rgba(var(--brand-blue-rgb), 0.06),
+    0 0 10px rgba(var(--brand-blue-rgb), 0.025);
 }
 
 code {
