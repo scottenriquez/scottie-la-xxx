@@ -55,7 +55,15 @@
   --ifm-color-primary-light: #349931;
   --ifm-color-primary-lighter: #37a133;
   --ifm-color-primary-lightest: #3db53a;
-  --brand-text-glow: 0 0 10px rgba(65, 166, 56, 0.35), 0 0 24px rgba(65, 166, 56, 0.15);
+  --brand-green-rgb: 65, 166, 56;
+  --brand-text-glow: 0 0 10px rgba(var(--brand-green-rgb), 0.35), 0 0 24px rgba(var(--brand-green-rgb), 0.15);
+  --accent-resume: #ff2736;
+  --accent-blog: #41a638;
+  --accent-football: #76a831;
+  --accent-github: #2ec3b9;
+  --accent-linkedin: #005cbb;
+  --school-ut: #bf5700;
+  --school-usc-chip: #ffffff;
   --light-1: 12% 8%;
   --light-2: 88% 28%;
   --light-3: 50% 95%;
@@ -71,6 +79,7 @@
   --ifm-color-primary-light: #6ac75e;
   --ifm-color-primary-lighter: #71ca66;
   --ifm-color-primary-lightest: #83d079;
+  --brand-green-rgb: 92, 194, 79;
   --ifm-background-color: #2c2c2c;
   --ifm-background-surface-color: #353535;
   --ifm-font-color-base: #e0f1dc;
@@ -116,7 +125,7 @@
 }
 
 .navbar__items a {
-  text-shadow: 0 0 6px rgba(65, 166, 56, 0.18);
+  text-shadow: 0 0 6px rgba(var(--brand-green-rgb), 0.18);
   transition:
     color 0.2s ease,
     text-shadow 0.3s ease;
@@ -125,22 +134,23 @@
 .navbar__items a:hover {
   color: var(--ifm-color-primary);
   text-shadow:
-    0 0 10px rgba(65, 166, 56, 0.4),
-    0 0 22px rgba(65, 166, 56, 0.18);
+    0 0 10px rgba(var(--brand-green-rgb), 0.4),
+    0 0 22px rgba(var(--brand-green-rgb), 0.18);
 }
 
 html {
   background-image:
-    radial-gradient(45rem 45rem at var(--light-1), rgba(65, 166, 56, 0.1), transparent 60%),
-    radial-gradient(38rem 38rem at var(--light-2), rgba(65, 166, 56, 0.07), transparent 60%),
-    radial-gradient(45rem 45rem at var(--light-3), rgba(65, 166, 56, 0.06), transparent 60%);
+    radial-gradient(45rem 45rem at var(--light-1), rgba(var(--brand-green-rgb), 0.12), transparent 60%),
+    radial-gradient(38rem 38rem at var(--light-2), rgba(var(--brand-green-rgb), 0.08), transparent 60%),
+    radial-gradient(45rem 45rem at var(--light-3), rgba(var(--brand-green-rgb), 0.07), transparent 60%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
-html[data-theme='dark'] {
-  background-image:
-    radial-gradient(45rem 45rem at var(--light-1), rgba(92, 194, 79, 0.14), transparent 60%),
-    radial-gradient(38rem 38rem at var(--light-2), rgba(92, 194, 79, 0.1), transparent 60%),
-    radial-gradient(45rem 45rem at var(--light-3), rgba(92, 194, 79, 0.08), transparent 60%);
+article img,
+article table {
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px rgba(var(--brand-green-rgb), 0.22),
+    0 0 24px rgba(var(--brand-green-rgb), 0.08);
 }

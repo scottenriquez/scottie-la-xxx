@@ -26,6 +26,9 @@ export default tseslint.config(
         version: 'detect',
       },
     },
+    rules: {
+      'react/prop-types': 'off',
+    },
   },
   prettier
 );

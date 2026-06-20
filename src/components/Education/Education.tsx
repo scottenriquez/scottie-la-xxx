@@ -16,14 +16,14 @@ const programs: Program[] = [
     school: 'University of Texas at Austin',
     degree: 'Bachelor of Arts, Computer Science and Asian Studies',
     years: '2008 to 2013',
-    chipColor: '#bf5700',
+    chipColor: 'var(--school-ut)',
   },
   {
     logoFileName: 'usc.svg',
     school: 'University of Southern California',
     degree: 'Master of Science, Applied Data Science',
     years: '2025 to present',
-    chipColor: '#ffffff',
+    chipColor: 'var(--school-usc-chip)',
   },
 ];
 

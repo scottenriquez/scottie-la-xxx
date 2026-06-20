@@ -1,4 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
@@ -59,11 +61,15 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: 'Posts',
+          blogSidebarCount: 'ALL',
+          blogListComponent: '@site/src/components/RedirectToLatestPost',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -73,6 +79,32 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'twiath',
+        routeBasePath: 'fantasy',
+        blogTitle: 'Fantasy Football',
+        path: './twiath',
+        blogSidebarTitle: 'Posts',
+        blogSidebarCount: 'ALL',
+        blogListComponent: '@site/src/components/RedirectToLatestPost',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
 
   themeConfig: {
@@ -96,7 +128,7 @@ const config: Config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: '#',
+          to: '/fantasy',
           label: 'Fantasy Football',
           position: 'left',
         },
@@ -125,6 +157,24 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        'bash',
+        'diff',
+        'json',
+        'yaml',
+        'csharp',
+        'hcl',
+        'toml',
+        'sql',
+        'docker',
+        'editorconfig',
+        'swift',
+        'markdown',
+        'typescript',
+        'jsx',
+        'python',
+        'graphql',
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };

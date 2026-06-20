@@ -34,21 +34,21 @@
 }
 
 .linkResume:hover {
-  color: #ff2736;
+  color: var(--accent-resume);
 }
 
 .linkBlog:hover {
-  color: #41a638;
+  color: var(--accent-blog);
 }
 
 .linkFootball:hover {
-  color: #76a831;
+  color: var(--accent-football);
 }
 
 .linkGithub:hover {
-  color: #2ec3b9;
+  color: var(--accent-github);
 }
 
 .linkLinkedin:hover {
-  color: #005cbb;
+  color: var(--accent-linkedin);
 }
