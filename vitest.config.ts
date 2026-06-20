@@ -13,6 +13,7 @@ export default defineConfig({
       { find: /.*\.svg$/, replacement: path.resolve(__dirname, 'src/test/mocks/Svg.tsx') },
       { find: '@theme/Heading', replacement: path.resolve(__dirname, 'src/test/mocks/Heading.tsx') },
       { find: '@docusaurus/Link', replacement: path.resolve(__dirname, 'src/test/mocks/Link.tsx') },
+      { find: '@docusaurus/useBaseUrl', replacement: path.resolve(__dirname, 'src/test/mocks/useBaseUrl.tsx') },
       { find: '@site', replacement: path.resolve(__dirname, '.') },
     ],
   },

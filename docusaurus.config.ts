@@ -3,9 +3,9 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'Scottie Enriquez',
+  tagline: 'Cloud solutions architect, software engineer, data scientist, and technical leader',
+  favicon: 'img/favicon.svg',
 
   future: {
     v4: true,
@@ -18,6 +18,8 @@ const config: Config = {
   projectName: 'docusaurus',
 
   onBrokenLinks: 'throw',
+
+  clientModules: ['./src/clientModules/randomLights.ts'],
 
   headTags: [
     {
@@ -79,70 +81,46 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Scottie Enriquez',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Scottie Enriquez logo',
+        src: 'img/scott-s.svg',
+        srcDark: 'img/scott-s-dark.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: 'pathname:///serving/resume.pdf',
+          label: 'Resume',
           position: 'left',
-          label: 'Tutorial',
+          target: '_blank',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: '#',
+          label: 'Fantasy Football',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/scottenriquez',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
+        },
+        {
+          href: 'https://www.linkedin.com/in/scottenriquez/',
+          label: 'LinkedIn',
+          position: 'left',
         },
       ],
     },
     footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      logo: {
+        alt: 'Scottie Enriquez logo',
+        src: 'img/scott-s.svg',
+        srcDark: 'img/scott-s-dark.svg',
+        href: '/',
+        width: 160,
+        height: 51,
+      },
     },
     prism: {
       theme: prismThemes.github,

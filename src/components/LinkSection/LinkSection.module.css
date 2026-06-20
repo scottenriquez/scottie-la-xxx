@@ -1,0 +1,54 @@
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+.heading {
+  font-family: var(--ifm-font-family-monospace);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--ifm-color-primary);
+  text-shadow: var(--brand-text-glow);
+  margin-bottom: 2.5rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.link {
+  display: inline-flex;
+  color: var(--ifm-color-emphasis-600);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.link:hover {
+  transform: scale(1.15);
+}
+
+.linkResume:hover {
+  color: #ff2736;
+}
+
+.linkBlog:hover {
+  color: #41a638;
+}
+
+.linkFootball:hover {
+  color: #76a831;
+}
+
+.linkGithub:hover {
+  color: #2ec3b9;
+}
+
+.linkLinkedin:hover {
+  color: #005cbb;
+}

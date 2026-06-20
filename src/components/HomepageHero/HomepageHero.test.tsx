@@ -3,23 +3,16 @@ import { describe, expect, it } from 'vitest';
 import HomepageHero from './HomepageHero';
 
 describe('HomepageHero', () => {
-  it('renders the name and roles', () => {
+  it('renders the name and location', () => {
     render(<HomepageHero />);
+
     expect(screen.getByRole('heading', { level: 1, name: 'Scottie Enriquez' })).toBeInTheDocument();
-    expect(screen.getByText(/cloud solutions architect/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Los Angeles, California' })).toBeInTheDocument();
   });
 
-  it('renders the GitHub and LinkedIn profile links', () => {
+  it('does not render any links', () => {
     render(<HomepageHero />);
-    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/scottenriquez');
-    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute(
-      'href',
-      'https://www.linkedin.com/in/scottenriquez/'
-    );
-  });
 
-  it('renders all five profile links', () => {
-    render(<HomepageHero />);
-    expect(screen.getAllByRole('link')).toHaveLength(5);
+    expect(screen.queryAllByRole('link')).toHaveLength(0);
   });
 });

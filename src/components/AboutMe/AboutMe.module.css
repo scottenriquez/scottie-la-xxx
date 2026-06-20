@@ -1,0 +1,26 @@
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+
+.heading {
+  font-family: var(--ifm-font-family-monospace);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--ifm-color-primary);
+  text-shadow: var(--brand-text-glow);
+  margin-bottom: 2.5rem;
+}
+
+.text {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}

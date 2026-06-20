@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - var(--ifm-navbar-height));
-  padding: 2rem;
+  padding: clamp(3rem, 10vh, 7rem) 2rem 3rem;
   overflow: hidden;
 }
 
@@ -19,6 +18,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ifm-color-primary);
+  text-shadow: var(--brand-text-glow);
   margin-bottom: 0.5rem;
 }
 
@@ -29,50 +29,5 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-700);
-  margin-bottom: 1.25rem;
-}
-
-.heroTagline {
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  line-height: 1.7;
-  color: var(--ifm-color-emphasis-800);
-  margin-bottom: 1.75rem;
-}
-
-.heroLinks {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.heroLink {
-  display: inline-flex;
-  color: var(--ifm-color-emphasis-600);
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.heroLink:hover {
-  transform: scale(1.15);
-}
-
-.linkResume:hover {
-  color: #ff2736;
-}
-
-.linkBlog:hover {
-  color: #41a638;
-}
-
-.linkFootball:hover {
-  color: #76a831;
-}
-
-.linkGithub:hover {
-  color: #2ec3b9;
-}
-
-.linkLinkedin:hover {
-  color: #005cbb;
+  margin-bottom: 0;
 }
