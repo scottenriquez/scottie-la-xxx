@@ -60,7 +60,6 @@ At the time of writing, the generated CDK template uses .NET Core 3.1. Inside of
 `TargetFramework` tag to `net5.0`.
 
 ```xml title='LambdaApiSolution/src/LambdaApiSolution/LambdaApiSolution.csproj'
-
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -89,7 +88,6 @@ dotnet test LambdaApiSolution.sln
 First, add the Lambda CDK NuGet package to the CDK project.
 
 ```xml
-
 <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.90.0"/>
 ```
 
@@ -149,7 +147,6 @@ event handler's parameter currently accepts a single string.
 Add the following packages to the CDK project:
 
 ```xml
-
 <PackageReference Include="Amazon.CDK.AWS.APIGatewayv2" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.APIGatewayv2.Integrations" Version="1.90.0"/>
 ```
@@ -235,7 +232,6 @@ a plaintext format object. Note that for this codebase, I've named my secret `Gi
 Next, add the following packages to the CDK project:
 
 ```xml
-
 <PackageReference Include="Amazon.CDK.AWS.CodeBuild" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.CodeDeploy" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.CodePipeline" Version="1.90.0"/>
