@@ -39,8 +39,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  overflow: hidden;
   box-shadow: 0 0 0 1px var(--ifm-color-emphasis-300);
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
 }
 
 .logo img {

@@ -9,7 +9,7 @@ export default function Writing(): ReactNode {
       heading="writing"
       links={[
         { label: 'Blog', href: '/blog', icon: faBlog, accentClassName: 'linkBlog' },
-        { label: 'Fantasy football', href: '#', icon: faFootball, accentClassName: 'linkFootball' },
+        { label: 'Fantasy football', href: '/fantasy', icon: faFootball, accentClassName: 'linkFootball' },
       ]}
     />
   );

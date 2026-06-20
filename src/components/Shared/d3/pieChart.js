@@ -1,3 +1,4 @@
+import { chartGreen, chartRed, chartSurface, chartLabel } from '@site/src/theme/colors';
 import { select } from 'd3-selection';
 import { sum } from 'd3-array';
 import { scaleOrdinal } from 'd3-scale';
@@ -26,8 +27,8 @@ class PieChart extends Component {
 
     // Everforest Dark Hard color palette
     const colors = [
-      '#a7c080', // green
-      '#e67e80', // red
+      chartGreen, // green
+      chartRed, // red
       '#dbbc7f', // yellow
       '#7fbbb3', // aqua
     ];
@@ -72,7 +73,7 @@ class PieChart extends Component {
       .attr('class', 'slice')
       .attr('d', arc)
       .attr('fill', (d) => colorScale(d.data[this.props.labelName]))
-      .attr('stroke', '#2d353b')
+      .attr('stroke', chartSurface)
       .attr('stroke-width', 2);
 
     // Draw labels
@@ -83,7 +84,7 @@ class PieChart extends Component {
       .attr('class', 'label')
       .attr('transform', (d) => `translate(${labelArc.centroid(d)})`)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#4b5263')
+      .attr('fill', chartLabel)
       .style('font-size', '16px')
       .style('font-weight', 'bold')
       .text((d) => d.data[this.props.labelName]);
@@ -99,7 +100,7 @@ class PieChart extends Component {
         return `translate(${x}, ${y + 20})`;
       })
       .attr('text-anchor', 'middle')
-      .attr('fill', '#4b5263')
+      .attr('fill', chartLabel)
       .style('font-size', '14px')
       .text((d) => {
         const total = sum(processedData, (item) => item[this.props.valueName]);

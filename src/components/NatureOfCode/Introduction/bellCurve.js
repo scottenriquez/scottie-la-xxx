@@ -1,3 +1,4 @@
+import { chartGreen, chartSurface } from '@site/src/theme/colors';
 import { Component } from 'react';
 import BarChart from '../../Shared/d3/barChart';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -76,7 +77,7 @@ class BellCurve extends Component {
       <div>
         <button
           className={'button button--secondary button--md'}
-          style={{ backgroundColor: '#a7c080', color: '#272e33' }}
+          style={{ backgroundColor: chartGreen, color: chartSurface }}
           onClick={this.handleRefreshDataClick}
         >
           <FontAwesomeIcon icon={faRefresh} /> Generate New Bell Curve

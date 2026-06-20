@@ -1,3 +1,4 @@
+import { chartGreen, chartSurface } from '@site/src/theme/colors';
 import { Component } from 'react';
 import CartesianPlane from '../../Shared/d3/cartesianPlane';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -96,7 +97,7 @@ class RandomWalk extends Component {
       <div>
         <button
           className={'button button--secondary button--md'}
-          style={{ backgroundColor: '#a7c080', color: '#272e33' }}
+          style={{ backgroundColor: chartGreen, color: chartSurface }}
           onClick={this.handleRefreshDataClick}
         >
           <FontAwesomeIcon icon={faRefresh} /> Generate {this.props.buttonText}

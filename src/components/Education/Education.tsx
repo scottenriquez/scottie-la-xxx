@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Link from '@docusaurus/Link';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import styles from './Education.module.css';
 
@@ -8,6 +9,7 @@ type Program = {
   degree: string;
   years: string;
   chipColor: string;
+  homepageUrl: string;
 };
 
 const programs: Program[] = [
@@ -17,6 +19,7 @@ const programs: Program[] = [
     degree: 'Bachelor of Arts, Computer Science and Asian Studies',
     years: '2008 to 2013',
     chipColor: 'var(--school-ut)',
+    homepageUrl: 'https://www.utexas.edu/',
   },
   {
     logoFileName: 'usc.svg',
@@ -24,6 +27,7 @@ const programs: Program[] = [
     degree: 'Master of Science, Applied Data Science',
     years: '2025 to present',
     chipColor: 'var(--school-usc-chip)',
+    homepageUrl: 'https://www.usc.edu/',
   },
 ];
 
@@ -37,9 +41,16 @@ export default function Education(): ReactNode {
       <ul className={styles.list}>
         {programs.map((program) => (
           <li key={program.school} className={styles.entry}>
-            <div className={styles.logo} style={{ backgroundColor: program.chipColor }}>
+            <Link
+              to={program.homepageUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={program.school}
+              className={styles.logo}
+              style={{ backgroundColor: program.chipColor }}
+            >
               <img src={withBaseUrl(`/img/education/${program.logoFileName}`)} alt={program.school} loading="lazy" />
-            </div>
+            </Link>
             <div className={styles.details}>
               <p className={styles.school}>{program.school}</p>
               <p className={styles.degree}>{program.degree}</p>

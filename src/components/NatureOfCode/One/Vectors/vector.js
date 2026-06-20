@@ -1,9 +1,10 @@
+import { chartGreenHex, chartSurface } from '@site/src/theme/colors';
 import { useEffect } from 'react';
 import * as THREE from 'three';
 import SceneInit from './sceneInit';
 
 const generateLine = (vectors) => {
-  const material = new THREE.LineBasicMaterial({ color: 0xa7c080 });
+  const material = new THREE.LineBasicMaterial({ color: chartGreenHex });
   const geometry = new THREE.BufferGeometry().setFromPoints(vectors);
   return new THREE.Line(geometry, material);
 };
@@ -31,7 +32,7 @@ const Vector = () => {
       style={{
         height: '400px',
         width: '100%',
-        backgroundColor: '#272e33',
+        backgroundColor: chartSurface,
         position: 'relative',
       }}
     >

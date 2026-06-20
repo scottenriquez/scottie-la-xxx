@@ -1,3 +1,4 @@
+import { chartGreen } from '@site/src/theme/colors';
 import { select } from 'd3-selection';
 import { max, ticks, extent } from 'd3-array';
 import { scaleBand, scaleLinear } from 'd3-scale';
@@ -38,11 +39,11 @@ class BarChartTickValues extends Component {
             .tickValues(ticks(...extent(x.domain()), width / 40).filter((v) => x(v) !== undefined))
             .tickSizeOuter(0)
         )
-        .style('color', '#a7c080');
+        .style('color', chartGreen);
     const y1Axis = (g) =>
       g
         .attr('transform', `translate(${margin.left},0)`)
-        .style('color', '#a7c080')
+        .style('color', chartGreen)
         .call(axisLeft(y1).ticks(null, 's'))
         .call((g) => g.select('.domain').remove())
         .call((g) =>
@@ -58,7 +59,7 @@ class BarChartTickValues extends Component {
     svg.select('.y-axis').call(y1Axis);
     svg
       .select('.plot-area')
-      .attr('fill', '#a7c080')
+      .attr('fill', chartGreen)
       .selectAll('.bar')
       .data(this.props.data)
       .join('rect')

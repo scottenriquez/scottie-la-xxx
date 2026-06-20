@@ -1,3 +1,4 @@
+import { chartGreen } from '@site/src/theme/colors';
 import { Component } from 'react';
 
 class CartesianPlane extends Component {
@@ -16,7 +17,7 @@ class CartesianPlane extends Component {
           y={pixel.y}
           width={1}
           height={1}
-          style={{ fill: 'rgb(167, 192, 128)' }}
+          style={{ fill: chartGreen }}
         />
       );
     }

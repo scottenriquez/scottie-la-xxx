@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import styles from './AboutMe.module.css';
 
 const roles =
-  "I'm a cloud solutions architect, software engineer, data scientist, and technical leader with over 13 years of professional experience";
+  'Cloud solutions architect, software engineer, data scientist, and technical leader with over 13 years of professional experience';
 
 export default function AboutMe(): ReactNode {
   return (

@@ -1,6 +1,6 @@
-import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import prismIcGreen from './src/theme/prismIcGreen';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
@@ -110,7 +110,8 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'Scottie Enriquez',
@@ -155,8 +156,8 @@ const config: Config = {
       },
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismIcGreen,
+      darkTheme: prismIcGreen,
       additionalLanguages: [
         'bash',
         'diff',
