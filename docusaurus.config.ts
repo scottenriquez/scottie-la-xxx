@@ -14,7 +14,7 @@ const config: Config = {
     faster: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://scottie.la',
   baseUrl: '/',
 
   organizationName: 'facebook',
@@ -62,10 +62,7 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           blogSidebarTitle: 'Posts',
@@ -103,15 +100,6 @@ const config: Config = {
         rehypePlugins: [rehypeKatex],
       },
     ],
-  ],
-
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
   ],
 
   themeConfig: {
@@ -166,7 +154,6 @@ const config: Config = {
       darkTheme: prismIcGreen,
       additionalLanguages: [
         'bash',
-        'diff',
         'json',
         'yaml',
         'csharp',
@@ -180,7 +167,6 @@ const config: Config = {
         'typescript',
         'jsx',
         'python',
-        'graphql',
       ],
     },
   } satisfies Preset.ThemeConfig,
