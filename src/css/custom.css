@@ -127,7 +127,6 @@ a:hover {
   background: rgba(28, 28, 28, 0.4);
 }
 
-.navbar__title,
 .navbar__items a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -135,6 +134,9 @@ a:hover {
 
 .navbar__title {
   color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
   transition: color 0.3s ease;
 }
 

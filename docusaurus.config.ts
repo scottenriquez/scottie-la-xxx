@@ -114,7 +114,6 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'Scottie Enriquez',
       logo: {
         alt: 'Scottie Enriquez logo',
         src: 'img/scott-s.svg',
