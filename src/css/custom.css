@@ -76,6 +76,7 @@
   --light-3: 50% 95%;
   --ifm-code-font-size: 95%;
   --ifm-link-hover-decoration: none;
+  --navbar-hostname: 'scottie.la';
   --docusaurus-highlighted-code-line-bg: rgba(17, 107, 65, 0.12);
 }
 
@@ -138,6 +139,10 @@ a:hover {
   letter-spacing: 0.08em;
   text-transform: lowercase;
   transition: color 0.3s ease;
+}
+
+.navbar__title::after {
+  content: var(--navbar-hostname);
 }
 
 .navbar__logo img {

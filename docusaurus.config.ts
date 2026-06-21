@@ -25,6 +25,12 @@ const config: Config = {
 
   headTags: [
     {
+      tagName: 'script',
+      attributes: {},
+      innerHTML:
+        "(function(){try{var hostname=window.location.hostname.replace(/^www\\./,'').toLowerCase();document.documentElement.style.setProperty('--navbar-hostname','\"'+hostname+'\"');}catch(error){}})();",
+    },
+    {
       tagName: 'link',
       attributes: {
         rel: 'preload',

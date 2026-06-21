@@ -1,14 +1,10 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import ThemedImage from '@theme/ThemedImage';
 
 const fallbackHostname = 'scottie.la';
-
-function normalizeHostname(hostname: string): string {
-  return hostname.replace(/^www\./, '').toLowerCase();
-}
 
 export default function NavbarLogo(): ReactNode {
   const {
@@ -19,13 +15,13 @@ export default function NavbarLogo(): ReactNode {
   const lightSource = useBaseUrl(logo?.src ?? '');
   const darkSource = useBaseUrl(logo?.srcDark ?? logo?.src ?? '');
 
-  const [hostname, setHostname] = useState(fallbackHostname);
-  useEffect(() => {
-    setHostname(normalizeHostname(window.location.hostname));
-  }, []);
-
   return (
-    <Link to={logoLink} className="navbar__brand" {...(logo?.target && { target: logo.target })}>
+    <Link
+      to={logoLink}
+      className="navbar__brand"
+      aria-label={fallbackHostname}
+      {...(logo?.target && { target: logo.target })}
+    >
       {logo && (
         <div className="navbar__logo">
           <ThemedImage
@@ -37,7 +33,7 @@ export default function NavbarLogo(): ReactNode {
           />
         </div>
       )}
-      <b className="navbar__title text--truncate">{hostname}</b>
+      <b className="navbar__title text--truncate" aria-hidden="true" />
     </Link>
   );
 }
