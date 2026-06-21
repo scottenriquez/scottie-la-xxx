@@ -40,7 +40,7 @@ For my second journey to the land of the rising sun, I opted to see more of the 
 
 We first travelled from where we were staying in Waseda to Sumida to see the legendary Tokyo Skytree Tower. The tower stands at approximately 650 meters tall making it the tallest structure in Japan and the second tallest structure in the entire world. While it is somewhat of a tourist trap, the view from Tembo Deck shows the massive sprawl of the largest metropolitan area in the world. 13.5 million people, about 1.5 times as many as New York City, live in Tokyo below. From approximately 450 meters up through a panoramic window, you can see how the iron and concrete seem to consume the earth in every direction for as far as the eye can see.
 
-![Skytree Tower](./skytree-view.png)
+![Skytree Tower](./skytree-view.webp)
 
 It’s a view with a surreal amount of detail. There seem to be an infinite number of nooks and crannies that house culture, shops, universities, parks, and libraries. When traveling throughout Tokyo, it’s easy to be shielded from the overwhelming logistics of a city that size. Given how advanced the subway system is, it’s very easy to abstractly move from district to district in your mind without fully appreciating the absolute chaos that surrounds you.
 
@@ -67,7 +67,7 @@ The three of us took trains for about an hour from Waseda in Tokyo to Fujikawagu
 
 While searching for the sign, we enjoyed all of the activities that Aokigahara has to offer: hiking through serene trails and crouching through caves. After a bit more research, we eventually found out that the trail with the anti-suicide sign was supposed to be located somewhere near the so-called Ice Cave. As it turned out, this cave is an attraction with many visitors. It seemed hard to believe that something so depressing and morose would be near a bunch of families posing in front of natural wonders. Sure enough, just behind the gift shop was a trail leading back into the forest. A short way into the the path, there it was.
 
-![Aokigahara sign](./aokigahara-sign.png)
+![Aokigahara sign](./aokigahara-sign.webp)
 
 「命は親から頂いた大切なもの。もう一度静かに両親や兄弟、子供のことを考えてみましょう。一人で悩まずまず相談してください。」
 
@@ -81,7 +81,7 @@ The already somber mood became sobering. The stillness somehow became even more 
 
 At first, we walked as far was we could with the sign that said no entry still in sight. That's when I saw the first tissue. My heart sank and the experience became even more real. It was a clear marker for navigating back to the main path. I examined the tissue and saw that it was light blue with what looked like hearts printed on it. It was very feminine. Immediately, I was already making deductions about the personality of whoever left it there. I thought about how they had the same idea we did about finding our way back out of the forest. It had been raining every day that week in the area prior to our arrival, so we knew that it was recently tied otherwise it would have disintegrated. The fact that this person used a flimsy tissue instead of a sturdy line or ribbon suggested that this person was not an experienced hiker.
 
-![Forest tissue](./forest-tissue.png)
+![Forest tissue](./forest-tissue.webp)
 
 We decided to follow the tissues. Honestly, I hadn't taken into consideration what I would have done if I found the person on the other end, but we pressed on. At first the tissues were in very rapid succession. Then they became more sparse. Eventually, the trail began to rise much more steeply and dissipate, and I didn't find any more tissues. I scouted ahead a bit, asking my companions to stay back at the last tissue, but I didn't find anything. Without food or rope to mark our way back, we decided to leave the forest. I'd like to think that the person turned around and left the forest, but we'll never know.
 

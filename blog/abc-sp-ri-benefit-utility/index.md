@@ -48,7 +48,7 @@ This utility shows how ABC custom line items can be used to distribute the benef
 
 ## Architecture
 
-![abc-sp-ri-utility-architecture-diagram.png](abc-sp-ri-utility-architecture-diagram.png)
+![abc-sp-ri-utility-architecture-diagram.webp](abc-sp-ri-utility-architecture-diagram.webp)
 
 The core functionality resides in a Lambda function built using [AWS Serverless Application Model (SAM)](https://aws.amazon.com/serverless/sam/). The infrastructure is defined using a CloudFormation template with the following resources **intended to be deployed in the payer account**:
 

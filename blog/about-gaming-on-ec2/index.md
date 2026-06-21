@@ -24,7 +24,7 @@ Always remember to shut the server down when you’re not using it and verify th
 
 Once the instance has been provisioned, you can connect to it via RDP. For macOS users, you can download Microsoft Remote Desktop 10 via the App Store. If you configured a key pair when launching your VM, download and locate the `.pem` file. In order to log into your new server, you’ll need the password for Administrator as well as the public hostname. To obtain the password, simply right-click on the instance and choose Get Windows Password and provide the private key if need be. To obtain the public hostname, simply refer to the description tab beneath the running instance. You can also download a Remote Desktop (`.rdp`) file via the right-click menu.
 
-![EC2 instance](./ec2-gaming-instance.png)
+![EC2 instance](./ec2-gaming-instance.webp)
 
 # Initial Configuration and Installing Software
 
@@ -46,4 +46,4 @@ It’s also worth noting that unless you provision an Elastic IP Address, your p
 
 I was able to play The Witcher 3 with bearable latency though I don’t know that this setup would be feasible for multiplayer or competitive gaming. Per the AMI’s documentation, the streaming limit is 1080p with 30 frames per second. This means that while the VM is powerful enough to achieve higher FPS at a higher resolution, the bottleneck will ultimately be its streaming bandwidth.
 
-![Laptop](./ec2-gaming-laptop.jpg)
+![Laptop](./ec2-gaming-laptop.webp)

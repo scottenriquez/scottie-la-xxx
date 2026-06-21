@@ -8,7 +8,7 @@ tags: ['Power Rankings']
 
 ## Draft Board
 
-![Draft board](./draft-board.png)
+![Draft board](./draft-board.webp)
 
 ## <img src="https://dxyip34awyjyf.cloudfront.net/379f5379a3205b9706e6a4b7b4471a8e-zero-scottie" class="sleeper-avatar"/> Manhattan (KS) Miracles | 0-0W/L | 0PF
 

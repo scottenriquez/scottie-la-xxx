@@ -46,7 +46,7 @@ The Yeoman scaffolding creates all widget builds as well. Because of this, addin
 ## Accessing Common Widget Properties
 
 When editing a widget in Mendix Studio Pro, there are a set of common properties that can be passed to widget such as an HTML class, CSS style, and tab index. These are passed to your root component and are accessible out-of-the-box as React props (i.e. `this.props.class`). This allows your widget to utilize the properties in the underlying JSX or TSX in whatever way makes the most sense.
-![Mendix common properties](./mendix-common-properties.png)
+![Mendix common properties](./mendix-common-properties.webp)
 
 If you elected to use TypeScript, an interface is generated for you as well.
 
@@ -62,7 +62,7 @@ interface CommonProps {
 ## Building the Editor Component
 
 The code for the `Editor` component is standard React. Ultimately, [this component](https://github.com/scottenriquez/mendix-8-ace-editor-widget/blob/master/aceEditor/src/components/Editor.tsx) could be easily used in a totally different application on a totally different platform.
-![Mendix AceEditor component screenshot](./mendix-editor-component-screenshot.png)
+![Mendix AceEditor component screenshot](./mendix-editor-component-screenshot.webp)
 
 ## Deploying the Widget
 

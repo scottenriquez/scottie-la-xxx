@@ -19,7 +19,7 @@ For 200 USD, the laptop is extremely well-made. The keyboard is comfortable for 
 - Front-Facing Camera (1080p)
 
 The laptop ships by default with Manjaro KDE for the operating system:
-![neofetch](./neofetch-cli.png)
+![neofetch](./neofetch-cli.webp)
 
 ## Development Usage
 

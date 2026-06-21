@@ -94,7 +94,7 @@ able to figure out exactly what being an affiliate means or what benefits predic
 accounts. I even reached out to a few via DM for more information, but none responded. It’s no secret that I’m a Los
 Angeles Lakers fan, so here’s an example of an account that I do not follow but often appears in my feed:
 
-![Lakers Empire](lakers-empire.png)
+![Lakers Empire](lakers-empire.webp)
 
 A simple idea came to mind. What if I could measure just how much of my feed are affiliates of gambling
 companies? The experiment begins.

@@ -14,7 +14,7 @@ One such aspect is providing developers visibility into the impact of their code
 
 ## Solution Architecture
 
-![Diagram](infracost.png)
+![Diagram](infracost.webp)
 
 This solution deploys several resources:
 
@@ -76,7 +76,7 @@ Before testing the pipeline, [subscribe to the SNS topic via the Console](https:
 
 The CodePipeline resource is triggered at creation, but there are manual approval stages to prevent any infrastructure from being created without intervention. Feel free to deploy the Terraform, but it is not required for generating cost differences via a pull request. The CodePipeline is triggered by changes to `main`.
 
-![Approval](codepipeline-approval.png)
+![Approval](codepipeline-approval.webp)
 
 Make some code changes to see the cost impact. To modify the Terraform code, either use the CodeCommit GUI in the Console or clone the repository to your development environment. First, create a branch called `feature` off of `main`. Then modify `ec2.tf` to use a different instance type:
 

@@ -227,7 +227,7 @@ For this example, the source code resides in GitHub as opposed to CodeCommit. To
 repository, a personal access token with `repo` permissions must be created via GitHub and stored in Secrets Manager as
 a plaintext format object. Note that for this codebase, I've named my secret `GitHub-Token`.
 
-![GitHub Personal Access Token](./github-personal-access-token.png)
+![GitHub Personal Access Token](./github-personal-access-token.webp)
 
 Next, add the following packages to the CDK project:
 

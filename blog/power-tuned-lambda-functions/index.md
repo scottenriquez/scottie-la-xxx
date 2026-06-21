@@ -34,7 +34,7 @@ hosted on [GitHub](https://github.com/scottenriquez/lambda-power-tuned).
 
 ## Solution Architecture
 
-![Diagram](lambda-power-tuned-architecture-diagram.png)
+![Diagram](lambda-power-tuned-architecture-diagram.webp)
 
 This solution deploys several resources:
 
@@ -101,7 +101,7 @@ The CodePipeline pipeline is triggered at creation, but there are manual approva
 from being created without intervention. Feel free to deploy the Terraform, but it is not required for generating tuning
 information via a pull request. The CodePipeline is triggered by changes to `main`.
 
-![Pipeline](./pipeline-screenshot.png)
+![Pipeline](./pipeline-screenshot.webp)
 
 Next, make some code changes to see the performance impact. To modify the Lambda code, either use the CodeCommit GUI in
 the Console or clone the repository to your development environment. First, create a branch called `feature` off of
@@ -117,7 +117,7 @@ the build, which does the following:
 - Run the `execute-power-tuning.sh` Bash code to invoke the state machine and capture results
 - Add a comment to the pull request with a hyperlink to the tuning results for easy consumption
 
-![PR](./pull-request-build-screenshot.png)
+![PR](./pull-request-build-screenshot.webp)
 
 The results are encoded into the query string of the hyperlink, so the tuning results can easily be shared. As shown by
 the [results of the example function](https://lambda-power-tuning.show/#gAAAAQACAAQ=;AAAAQAAAAEAAAABAAAAAQA==;b6VpMW+l6TFvpWkyb6XpMg==)

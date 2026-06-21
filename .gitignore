@@ -155,3 +155,6 @@ vite.config.ts.timestamp-*
 /build
 .docusaurus
 .cache-loader
+
+# Resume
+~$resume.docx

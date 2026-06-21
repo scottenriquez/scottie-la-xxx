@@ -45,6 +45,6 @@ Last but not least, the Touch Bar support for MacBook is quite solid as well. I'
 
 ## .NET Support for Jupyter Notebooks
 
-![Jupyter for .NET](./jupyter-dotnet-screenshot.png)
+![Jupyter for .NET](./jupyter-dotnet-screenshot.webp)
 
 .NET now supports Jupyter which allows for code sharing, documentation, and reporting opportunities. In addition to running .NET code, it even supports fetching external dependencies via NuGet on the fly.

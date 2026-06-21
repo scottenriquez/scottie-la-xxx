@@ -115,7 +115,7 @@ jobs:
 
 Before pushing the changes to the remote origin, add the IAM pipeline user credentials as secrets in GitHub.
 
-![github-actions-secret.png](github-actions-secret.png)
+![github-actions-secret.webp](github-actions-secret.webp)
 
 ## Adding Approvers
 
@@ -133,6 +133,6 @@ deploy-prod:
 
 For [feature branches](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) (i.e., named `feature*`), the pipeline will create a new CloudFormation stack and deploy the branch automatically. This is powerful for quickly testing in a live environment outside of the two stages created by the pipeline.
 
-![feature-branches-action.png](feature-branches-action.png)
+![feature-branches-action.webp](feature-branches-action.webp)
 
 Note that there is no functionality in the default pipeline to delete the CloudFormation stack when the feature branch is deleted.

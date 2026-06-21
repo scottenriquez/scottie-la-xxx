@@ -84,7 +84,7 @@ var environment = process.env.NODE_ENV || 'development';
 
 ## Using the ISP Complainer Dashboard
 
-![ISP Complainer](./isp-complainer-demo.png)
+![ISP Complainer](./isp-complainer-demo.webp)
 
 After starting the server, you can access the dashboard via http://localhost:3030/. This interface allows two options: manual and scheduled checks. The manual option allows you to kick off individual requests at your will, and the schedule allows you to run the process over custom intervals. All of the scheduling is handled with Angular’s `$interval`, and the results are tracked in the browser. Note that if you close the browser, no more checks will be scheduled and you will lose all of the results currently displayed on the browser.
 

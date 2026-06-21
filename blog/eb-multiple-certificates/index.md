@@ -22,12 +22,12 @@ Since my Elastic Beanstalk environment was configured before the new Application
 
 Unless specified otherwise during the provisioning process, no HTTPS listener will be configured. Just like my Classic Load Balancer, I created an HTTPS listener on port 443 and chose my primary domain’s SSL certificate from ACM as the default. Application Load Balancers also only allow one listener per protocol, so one more step must be taken.
 
-![Listener](./load-balancer-listener.png)
+![Listener](./load-balancer-listener.webp)
 
 ## Adding Certificates
 
 Via the EC2 interface you can edit your load balancer’s listeners settings and add more SSL certificates. That’s all you need to configure.
 
-![SSL](./ssl-certs-on-load-balancer.png)
+![SSL](./ssl-certs-on-load-balancer.webp)
 
 The rest is handled by the magic of Server Name Indication (SNI) which Application Load Balancers use as of October 2017. The load balancer will use the correct SSL certificate based on the domain specified in the request.

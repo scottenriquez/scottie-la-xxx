@@ -185,7 +185,7 @@ Though many of the talks at Visual Studio Live utilized Linux environments in Az
 
 You can also combine this with a preview of the new Windows Terminal. Which allows you to have multiple tabs running command lines for various environments simultaneously (i.e. PowerShell, Linux, etc.). You can even modify files on your Linux file system with Visual Studio code via a nifty plugin.
 
-![WSL](./wsl2-with-vscode-in-ms-term.png)
+![WSL](./wsl2-with-vscode-in-ms-term.webp)
 
 I installed Debian 10 plus my usual Linux tools like Vim and Zsh and found that the performance and usability were solid. I even went as far as to install and use some tools that aren't easy to use on Windows like Docker. I was able to run containers without any performance issues. Though all of these features and tools are still in preview, it shows Microsoft's commitment to Linux going forward. It also makes software development on Windows a lot more appealing in my opinion given that the majority of cloud infrastructure runs Linux.
 

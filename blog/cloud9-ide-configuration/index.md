@@ -10,7 +10,7 @@ tags: ['Cloud', 'Programming']
 
 [Per AWS](https://aws.amazon.com/cloud9/), "Cloud9 is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools like Docker and support for popular programming languages, including JavaScript, Python, PHP, and .NET." The AWS, Serverless Application Model (SAM), and Cloud Development Kit (CDK) CLIs are pre-installed as well. Users are abstracted from credential management (i.e., there's no need to provision an IAM user and run `aws configure`). Since the underlying compute is an EC2 instance, developers have a consistent experience across client devices.
 
-![Cloud9](./cloud9.png)
+![Cloud9](./cloud9.webp)
 
 Cloud9 makes it easy to declare an environment using CloudFormation, specify Git repositories to clone during the provisioning process, and share various custom settings such as themes and keybindings with developers. It's also a cheap option since the EC2 instance shuts itself down after a set period of time (with a default of 30 minutes).
 

@@ -232,7 +232,7 @@ dscl . -append /Groups/admin GroupMembership Scottie
 
 I then used [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/) to connect over port `5900`.
 
-![macOS on EC2](./macOS-ec2.png)
+![macOS on EC2](./macOS-ec2.webp)
 
 ## First-Class .NET 5 Support for Lambda
 

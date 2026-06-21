@@ -22,11 +22,11 @@ To test this new feature, we need a few things:
 
 First, [opt in to Compute Optimizer](https://aws.amazon.com/compute-optimizer/getting-started/) in your AWS account. Next, enable [AWS integration](https://docs.datadoghq.com/integrations/amazon_web_services/) in your Datadog account. This can be done in an automated fashion via a CloudFormation stack. It's also worth noting that Datadog offers a [14-day free trial](https://www.datadoghq.com/free-datadog-trial/).
 
-![datadog-aws-integration.png](datadog-aws-integration.png)
+![datadog-aws-integration.webp](datadog-aws-integration.webp)
 
 Back in the AWS Console for Compute Optimizer, select Datadog as an external metrics ingestion source.
 
-![compute-optimizer-third-party.png](compute-optimizer-third-party.png)
+![compute-optimizer-third-party.webp](compute-optimizer-third-party.webp)
 
 Lastly, we need to deploy an EC2 instance. The following CDK stack creates a VPC, EC2 instance (`t3.medium`; be aware of charges) with the Datadog agent installed, security group, and an IAM role. Before deploying the stack, be sure to set `DD_API_KEY` and `DD_SITE` environment variables. The EC2 instance, role, and security group are also configured for Instance Connect.
 
@@ -88,7 +88,7 @@ export class Ec2InstanceWithDatadogStack extends cdk.Stack {
 
 Once successfully deployed, metrics for the EC2 instance will appear in your Datadog account.
 
-![datadog-ec2-metrics.png](datadog-ec2-metrics.png)
+![datadog-ec2-metrics.webp](datadog-ec2-metrics.webp)
 
 Finally, wait up to 30 hours for a finding to appear in Compute Optimizer with the proper third-party APM metrics.
 
@@ -150,10 +150,10 @@ export class Java11SnapstartLambdaStack extends cdk.Stack {
 In [Jeff Barr's post](https://aws.amazon.com/blogs/aws/new-accelerate-your-lambda-functions-with-lambda-snapstart/), he used a Spring Boot function and achieved significant performance benefits. Next, I wanted to see if there were any benefits to a barebones Java 11 function, given that there is no additional charge for SnapStart. With a few tests, I reproduced a slight decrease in total duration.
 
 Cold start without SnapStart (577.84 milliseconds):
-![without-snapstart.png](without-snapstart.png)
+![without-snapstart.webp](without-snapstart.webp)
 
 Cold start with SnapStart (537.94 milliseconds):
-![with-snapstart.png](with-snapstart.png)
+![with-snapstart.webp](with-snapstart.webp)
 
 A few cold start tests are hardly conclusive, but I'm excited to see how AWS customers' performance and costs fare at scale. One thing to note is that in both my testing and the Jeff Barr example, the billed duration increased with SnapStart while the total duration decreased (i.e., this may be faster but come with an indirect cost).
 
@@ -172,13 +172,13 @@ CodeCatalyst does not live in the AWS Console. It's a separate offering that int
 
 One of the most compelling features of CodeCatalyst is blueprints. Blueprints aim to provide fully functional starter kits encapsulating useful defaults and best practices. For example, I chose the .NET serverless blueprint that provisioned a Lambda function's source code and IaC in a Git repository with a CI/CD pipeline.
 
-![codecatalyst.png](codecatalyst.png)
+![codecatalyst.webp](codecatalyst.webp)
 
 ## AWS Application Composer Preview
 
 Application Composer is a new service from AWS that allows developers to map out select resources using a GUI with the feel of an architecture diagram. These resources can be connected to one another (e.g., an EventBridge Schedule to trigger Lambda). A subset of attributes can also be modified, such as the Lambda runtime.
 
-![aws-application-composer.png](aws-application-composer.png)
+![aws-application-composer.webp](aws-application-composer.webp)
 
 While the creation process is UI-driven, the output is a SAM template (i.e., a CloudFormation template with a `Transform` statement). For example, the diagram above creates the following:
 
@@ -251,16 +251,16 @@ I find [this release](https://aws.amazon.com/blogs/aws/new-fully-managed-blue-gr
 
 To test this feature, I provisioned a MySQL RDS instance with an older version on an Intel instance with a previous-generation general-purpose SSD. A Blue/Green Deployment can then be created via the Console and CLI, which spawns a second instance. I then modified the Green instance to use `gp3` storage, a Graviton instance type (`db.t4g.medium`), and the latest version of MySQL.
 
-![rds-blue-green-deployment.png](rds-blue-green-deployment.png)
+![rds-blue-green-deployment.webp](rds-blue-green-deployment.webp)
 
 Once the Green instance modifications were finished, I then switched over the instances.
 
-![rds-blue-green-switch-over.png](rds-blue-green-switch-over.png)
+![rds-blue-green-switch-over.webp](rds-blue-green-switch-over.webp)
 
 ## Amazon CodeWhisperer Support for C# and TypeScript
 
 CodeWhisperer, Amazon's response to GitHub Copilot, is described as an ML-powered coding companion. I had yet to test the preview, but [this release](https://aws.amazon.com/about-aws/whats-new/2022/11/amazon-codewhisperer-enterprise-controls-sign-up-new-languages/) is relevant to me, given I write mostly TypeScript and C# these days. Moreover, TypeScript is particularly interesting to the cloud community, given that it is the de facto standard for CDK as the first language supported. CodeWhisperer is available as part of the AWS Toolkit for Visual Studio Code and the JetBrains suite, but I opted to give it a test run in Cloud9, AWS's cloud-based IDE.
 
-![amazon-codewhisperer.png](amazon-codewhisperer.png)
+![amazon-codewhisperer.webp](amazon-codewhisperer.webp)
 
 CodeWhisperer is proficient at generating code against the AWS SDK, such as functions to stop an EC2 instance or fetch objects from an S3 bucket. With regards to CDK, it generated simple constructs sufficiently for me. However, CodeWhisperer tended to generate recommendations line-by-line instead of in large blocks for larger and more complex constructs. In addition, the recommendations seemed to be context-aware (i.e., recommending valid properties and methods based on class definitions). These two use cases alone provide a great deal of opportunity since most of the time I spend writing code with AWS SDK and CDK tends to be spent reading documentation.

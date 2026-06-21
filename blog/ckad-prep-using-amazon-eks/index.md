@@ -549,11 +549,11 @@ kubectl scale deployment inflate --replicas 5
 
 In less than a minute after the `inflate` command, a new EC2 instance is created that matches the node pool specifications. In my case, a `c5n.2xlarge` server was deployed.
 
-![Karpenter instances](./karpenter-instances.png)
+![Karpenter instances](./karpenter-instances.webp)
 
 As expected, the node pool leverages Spot instances.
 
-![Karpenter instances](./karpenter-spot-instance.png)
+![Karpenter instances](./karpenter-spot-instance.webp)
 
 You can monitor the Karpenter logs via the command below. Less than a minute after deleting the Deployment, the `c5n.2xlarge` instance was terminated. Be sure to follow the cleanup steps when done to ensure no resources become orphaned.
 
@@ -597,7 +597,7 @@ eksctl create addon --name aws-ebs-csi-driver --cluster learning-kubernetes --se
 
 Once completed, the add-on will appear in the AWS Console.
 
-![EBS CSI](./eks-ebs-csi-add-on.png)
+![EBS CSI](./eks-ebs-csi-add-on.webp)
 
 Next, define the StorageClass and PersistentVolumeClaim:
 
@@ -659,7 +659,7 @@ spec:
 
 As soon as the Pod is created, a `gp3` volume is provisioned.
 
-![PVC](./pvc.png)
+![PVC](./pvc.webp)
 
 ## 11: Prometheus and Grafana
 
@@ -684,11 +684,11 @@ kubectl port-forward svc/v60-0-1-grafana 3000:80
 
 Using port forwarding, we can quickly access Prometheus:
 
-![Prometheus](./prometheus.png)
+![Prometheus](./prometheus.webp)
 
 And Grafana:
 
-![Grafana](./grafana.png)
+![Grafana](./grafana.webp)
 
 ## 12: Container Insights
 
@@ -705,7 +705,7 @@ aws iam attach-role-policy \
 aws eks create-addon --cluster-name learning-kubernetes --addon-name amazon-cloudwatch-observability
 ```
 
-![Container Insights](./container-insights.png)
+![Container Insights](./container-insights.webp)
 
 It's worth noting that Container Insights can also [ingest Prometheus metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus.html).
 
@@ -715,7 +715,7 @@ The [AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguid
 
 Create a new CUR via Data Exports in the Billing and Cost Management Console if required. If you have an existing CUR without split cost allocation data, you can modify the report content configuration to add this.
 
-![Data Exports](./data-exports-split-cost.png)
+![Data Exports](./data-exports-split-cost.webp)
 
 With this configured, we can use the following [SQL query in Athena](https://docs.aws.amazon.com/cur/latest/userguide/cur-query-athena.html) to gather cost and usage data for the EKS cluster resources:
 
@@ -786,7 +786,7 @@ ORDER BY
   "date" DESC
 ```
 
-![Athena](./cur-split-cost-allocation.png)
+![Athena](./cur-split-cost-allocation.webp)
 
 AWS also offers [open-source QuickSight dashboards](https://d1s0yx3p3y3rah.cloudfront.net/anonymous-embed?dashboard=containers-cost-allocation&sheet=default) that provide a visualization of this data.
 
@@ -1077,7 +1077,7 @@ spec:
 
 With this approach, traffic will be directed to the canary pod on average 20% of the time. It may take several requests to the Service, but a canary webpage will eventually be returned.
 
-![Canary](./canary.png)
+![Canary](./canary.webp)
 
 ## 18: Probes (CKAD Topic)
 
@@ -1362,7 +1362,7 @@ spec:
 
 Based on the configuration, the ArgoCD application will automatically be updated when we commit to the specified GitHub repository. Via the UI, we can monitor the resources that have been created, sync status, commit information, etc.
 
-![ArgoCD](./argocd.png)
+![ArgoCD](./argocd.webp)
 
 ## 23: cdk8s
 
@@ -1457,7 +1457,7 @@ def handle(request):
 
 Finally, we can invoke the function through the web UI:
 
-![OpenFaaS](./open-faas.png)
+![OpenFaaS](./open-faas.webp)
 
 ## Disclaimer
 

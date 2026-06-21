@@ -52,7 +52,7 @@ void draw()
 
 This image from the Processing code output shows the ball's movement through vector space. The circle's path is tracked by selecting a random color for the ball on each iteration:
 
-![Bouncing Ball Processing](./bouncing-ball-processing.png)
+![Bouncing Ball Processing](./bouncing-ball-processing.webp)
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector):
 
