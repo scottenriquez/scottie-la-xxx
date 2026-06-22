@@ -31,6 +31,7 @@ const BouncingSphere = () => {
     canvas.scene.add(gridYZ);
     canvas.scene.add(sphere);
     canvas.animate();
+    return () => canvas.dispose();
   }, []);
   return (
     <div

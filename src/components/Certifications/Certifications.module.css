@@ -48,8 +48,10 @@
   transition: transform 0.2s ease;
 }
 
-.badge img:hover {
-  transform: scale(1.08);
+@media (hover: hover) {
+  .badge img:hover {
+    transform: scale(1.08);
+  }
 }
 
 @media (max-width: 480px) {

@@ -25,6 +25,7 @@ const Vector = () => {
     gridYZ.rotation.z = Math.PI / 2;
     canvas.scene.add(gridYZ);
     canvas.animate();
+    return () => canvas.dispose();
   }, []);
   return (
     <div

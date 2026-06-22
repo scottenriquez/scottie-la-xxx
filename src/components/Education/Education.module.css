@@ -43,8 +43,10 @@
   transition: transform 0.2s ease;
 }
 
-.logo:hover {
-  transform: scale(1.08);
+@media (hover: hover) {
+  .logo:hover {
+    transform: scale(1.08);
+  }
 }
 
 .logo img {
