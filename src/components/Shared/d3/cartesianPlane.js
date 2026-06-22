@@ -12,7 +12,7 @@ class CartesianPlane extends Component {
       const pixel = this.props.pixels[index];
       pixelRectangles.push(
         <rect
-          key={Math.random() * 10000000}
+          key={`${pixel.x}-${pixel.y}-${index}`}
           x={pixel.x}
           y={pixel.y}
           width={1}

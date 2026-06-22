@@ -1,4 +1,4 @@
-import { chartGreen, chartRed, chartSurface, chartLabel } from '@site/src/theme/colors';
+import { chartGreen, chartRed, chartYellow, chartAqua, chartSurface, chartLabel } from '@site/src/theme/colors';
 import { select } from 'd3-selection';
 import { sum } from 'd3-array';
 import { scaleOrdinal } from 'd3-scale';
@@ -25,15 +25,8 @@ class PieChart extends Component {
     const height = 480;
     const radius = Math.min(width, height) / 2 - 20;
 
-    // Everforest Dark Hard color palette
-    const colors = [
-      chartGreen, // green
-      chartRed, // red
-      '#dbbc7f', // yellow
-      '#7fbbb3', // aqua
-    ];
+    const colors = [chartGreen, chartRed, chartYellow, chartAqua];
 
-    // Sort data by value and take top 3, group rest as "Others"
     const sortedData = [...this.props.data].sort((a, b) => b[this.props.valueName] - a[this.props.valueName]);
     const top3 = sortedData.slice(0, 3);
     const others = sortedData.slice(3);
@@ -65,7 +58,6 @@ class PieChart extends Component {
 
     const pieData = pie(processedData);
 
-    // Draw pie slices
     pieGroup
       .selectAll('.slice')
       .data(pieData)
@@ -76,7 +68,6 @@ class PieChart extends Component {
       .attr('stroke', chartSurface)
       .attr('stroke-width', 2);
 
-    // Draw labels
     pieGroup
       .selectAll('.label')
       .data(pieData)
@@ -89,7 +80,6 @@ class PieChart extends Component {
       .style('font-weight', 'bold')
       .text((d) => d.data[this.props.labelName]);
 
-    // Draw percentage labels
     pieGroup
       .selectAll('.percentage')
       .data(pieData)

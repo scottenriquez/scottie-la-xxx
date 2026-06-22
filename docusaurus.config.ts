@@ -4,6 +4,14 @@ import prismIcGreen from './src/theme/prismIcGreen';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const sharedBlogOptions = {
+  blogSidebarTitle: 'Posts',
+  blogSidebarCount: 'ALL' as const,
+  blogListComponent: '@site/src/components/RedirectToLatestPost',
+  remarkPlugins: [remarkMath],
+  rehypePlugins: [rehypeKatex],
+};
+
 const config: Config = {
   title: 'Scottie Enriquez',
   tagline: 'Cloud solutions architect, software engineer, data scientist, and technical leader',
@@ -17,8 +25,8 @@ const config: Config = {
   url: 'https://scottie.la',
   baseUrl: '/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'scottenriquez',
+  projectName: 'scottie-la-xxx',
 
   onBrokenLinks: 'throw',
 
@@ -65,11 +73,7 @@ const config: Config = {
         docs: false,
         blog: {
           showReadingTime: true,
-          blogSidebarTitle: 'Posts',
-          blogSidebarCount: 'ALL',
-          blogListComponent: '@site/src/components/RedirectToLatestPost',
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          ...sharedBlogOptions,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -93,11 +97,7 @@ const config: Config = {
         routeBasePath: 'fantasy',
         blogTitle: 'Fantasy Football',
         path: './twiath',
-        blogSidebarTitle: 'Posts',
-        blogSidebarCount: 'ALL',
-        blogListComponent: '@site/src/components/RedirectToLatestPost',
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
+        ...sharedBlogOptions,
       },
     ],
   ],

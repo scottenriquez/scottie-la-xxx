@@ -156,5 +156,5 @@ vite.config.ts.timestamp-*
 .docusaurus
 .cache-loader
 
-# Resume
-~$resume.docx
+# Office temporary lock files
+~$*

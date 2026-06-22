@@ -1,6 +1,8 @@
 export const chartGreen = '#41a638';
 export const chartGreenHex = 0x41a638;
 export const chartRed = '#ff2736';
+export const chartYellow = '#dbbc7f';
+export const chartAqua = '#7fbbb3';
 export const chartSurface = '#2c2c2c';
 export const chartLabel = '#e0f1dc';
 
