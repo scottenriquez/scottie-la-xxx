@@ -28,6 +28,9 @@ describe('Education', () => {
     render(<Education />);
 
     expect(screen.getByRole('img', { name: 'University of Texas at Austin' })).not.toHaveAttribute('loading', 'lazy');
-    expect(screen.getByRole('img', { name: 'University of Southern California' })).not.toHaveAttribute('loading', 'lazy');
+    expect(screen.getByRole('img', { name: 'University of Southern California' })).not.toHaveAttribute(
+      'loading',
+      'lazy'
+    );
   });
 });

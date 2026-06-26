@@ -7,7 +7,6 @@ import type * as Preset from '@docusaurus/preset-classic';
 const sharedBlogOptions = {
   blogSidebarTitle: 'Posts',
   blogSidebarCount: 'ALL' as const,
-  blogListComponent: '@site/src/components/RedirectToLatestPost',
   remarkPlugins: [remarkMath],
   rehypePlugins: [rehypeKatex],
 };
