@@ -273,3 +273,13 @@ pre code {
 .theme-code-block [class*='codeBlockTitle'] {
   background-color: var(--code-block-title-background);
 }
+
+.blog-wrapper header h1,
+.blog-wrapper header h1 a,
+.blog-wrapper header h2,
+.blog-wrapper header h2 a {
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--ifm-color-primary);
+  text-shadow: var(--brand-text-glow);
+  text-transform: uppercase;
+}
