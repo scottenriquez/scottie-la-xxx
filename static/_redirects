@@ -1,0 +1,7 @@
+https://scottie.is/writing/*                      https://scottie.la/blog/:splat       301!
+https://scottie.is/writing                        https://scottie.la/blog              301!
+https://scottie.is/discussing-fantasy-football/*  https://scottie.la/fantasy/:splat    301!
+https://scottie.is/discussing-fantasy-football    https://scottie.la/fantasy           301!
+https://scottie.is/docs/*                         https://scottie.la/                  301!
+https://scottie.is/docs                           https://scottie.la/                  301!
+https://scottie.is/*                              https://scottie.la/:splat            301!
