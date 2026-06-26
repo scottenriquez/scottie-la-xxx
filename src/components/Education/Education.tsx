@@ -49,7 +49,7 @@ export default function Education(): ReactNode {
               className={styles.logo}
               style={{ backgroundColor: program.chipColor }}
             >
-              <img src={withBaseUrl(`/img/education/${program.logoFileName}`)} alt={program.school} loading="lazy" />
+              <img src={withBaseUrl(`/img/education/${program.logoFileName}`)} alt={program.school} />
             </Link>
             <div className={styles.details}>
               <p className={styles.school}>{program.school}</p>
