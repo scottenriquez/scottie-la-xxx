@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faPlaystation, faSteam } from '@fortawesome/free-brands-svg-icons';
 import LinkSection from '@site/src/components/LinkSection/LinkSection';
 
 export default function Socials(): ReactNode {
@@ -9,17 +9,24 @@ export default function Socials(): ReactNode {
       heading="socials"
       links={[
         {
-          label: 'GitHub',
-          href: 'https://github.com/scottenriquez',
-          icon: faGithub,
-          accentClassName: 'linkGithub',
+          label: 'Instagram',
+          href: 'https://www.instagram.com/scottenriquez',
+          icon: faInstagram,
+          accentClassName: 'linkInstagram',
           newTab: true,
         },
         {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/scottenriquez/',
-          icon: faLinkedin,
-          accentClassName: 'linkLinkedin',
+          label: 'PlayStation',
+          href: 'https://profile.playstation.com/exoentropy',
+          icon: faPlaystation,
+          accentClassName: 'linkPlaystation',
+          newTab: true,
+        },
+        {
+          label: 'Steam',
+          href: 'https://steamcommunity.com/id/exoentropy/',
+          icon: faSteam,
+          accentClassName: 'linkSteam',
           newTab: true,
         },
       ]}

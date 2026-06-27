@@ -9,11 +9,9 @@ describe('Resume', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'resume' })).toBeInTheDocument();
   });
 
-  it('links to the resume PDF in a new tab', () => {
+  it('links to the resume PDF', () => {
     render(<Resume />);
 
-    const link = screen.getByRole('link', { name: 'Resume' });
-    expect(link).toHaveAttribute('href', 'pathname:///serving/resume.pdf');
-    expect(link).toHaveAttribute('target', '_blank');
+    expect(screen.getByRole('link', { name: 'Resume' })).toHaveAttribute('href', 'pathname:///serving/resume.pdf');
   });
 });

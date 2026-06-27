@@ -9,7 +9,7 @@ type Certification = {
   credentialUrl: string;
 };
 
-const certifications: Certification[] = [
+export const certifications: Certification[] = [
   {
     fileName: 'aws-cloud-practitioner.webp',
     name: 'AWS Certified Cloud Practitioner',

@@ -5,6 +5,7 @@ import HomepageHero from '@site/src/components/HomepageHero/HomepageHero';
 import AboutMe from '@site/src/components/AboutMe/AboutMe';
 import Resume from '@site/src/components/Resume/Resume';
 import Writing from '@site/src/components/Writing/Writing';
+import ProfessionalNetworks from '@site/src/components/ProfessionalNetworks/ProfessionalNetworks';
 import Socials from '@site/src/components/Socials/Socials';
 import Certifications from '@site/src/components/Certifications/Certifications';
 import Education from '@site/src/components/Education/Education';
@@ -18,9 +19,10 @@ export default function Home(): ReactNode {
         <AboutMe />
         <Education />
         <Certifications />
-        <Writing />
-        <Socials />
         <Resume />
+        <Writing />
+        <ProfessionalNetworks />
+        <Socials />
       </main>
     </Layout>
   );

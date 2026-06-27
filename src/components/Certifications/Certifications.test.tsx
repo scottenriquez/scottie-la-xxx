@@ -1,20 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import Certifications from './Certifications';
+import Certifications, { certifications } from './Certifications';
 
 describe('Certifications', () => {
-  it('renders all sixteen certification badges', () => {
-    render(<Certifications />);
-
-    expect(screen.getAllByRole('img')).toHaveLength(16);
-  });
-
-  it('renders the badges in resume order', () => {
+  it('renders a badge for every certification, in order, labelled by name', () => {
     render(<Certifications />);
 
     const altTexts = screen.getAllByRole('img').map((image) => image.getAttribute('alt'));
-    expect(altTexts[0]).toBe('AWS Certified Cloud Practitioner');
-    expect(altTexts[15]).toBe('Certified Kubernetes Application Developer (CKAD)');
+    expect(altTexts).toEqual(certifications.map((certification) => certification.name));
   });
 
   it('omits the removed FinOps and Python certifications', () => {
@@ -30,14 +23,15 @@ describe('Certifications', () => {
     render(<Certifications />);
 
     const links = screen.getAllByRole('link');
-    expect(links).toHaveLength(16);
+    expect(links).toHaveLength(certifications.length);
     for (const link of links) {
       expect(link).toHaveAttribute('target', '_blank');
     }
 
-    expect(screen.getByRole('link', { name: 'AWS Certified Cloud Practitioner' })).toHaveAttribute(
+    const [firstCertification] = certifications;
+    expect(screen.getByRole('link', { name: firstCertification.name })).toHaveAttribute(
       'href',
-      'https://www.credly.com/badges/a7e6b0f7-ce2a-431d-8f9f-17bad4a0cb4d/public_url'
+      firstCertification.credentialUrl
     );
   });
 

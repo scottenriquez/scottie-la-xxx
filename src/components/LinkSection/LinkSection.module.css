@@ -52,3 +52,15 @@
 .linkLinkedin:hover {
   color: var(--accent-linkedin);
 }
+
+.linkInstagram:hover {
+  color: var(--accent-instagram);
+}
+
+.linkPlaystation:hover {
+  color: var(--accent-playstation);
+}
+
+.linkSteam:hover {
+  color: var(--accent-steam);
+}

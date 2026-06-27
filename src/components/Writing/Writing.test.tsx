@@ -9,11 +9,10 @@ describe('Writing', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'writing' })).toBeInTheDocument();
   });
 
-  it('renders the blog and fantasy football links', () => {
+  it('links to the blog and fantasy football sections', () => {
     render(<Writing />);
 
     expect(screen.getByRole('link', { name: 'Blog' })).toHaveAttribute('href', '/blog');
-    expect(screen.getByRole('link', { name: 'Fantasy football' })).toBeInTheDocument();
-    expect(screen.getAllByRole('link')).toHaveLength(2);
+    expect(screen.getByRole('link', { name: 'Fantasy football' })).toHaveAttribute('href', '/fantasy');
   });
 });

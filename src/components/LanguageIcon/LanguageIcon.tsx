@@ -4,6 +4,7 @@ import {
   siDocker,
   siDotnet,
   siEditorconfig,
+  siEslint,
   siGit,
   siGnubash,
   siGo,
@@ -11,15 +12,19 @@ import {
   siHtml5,
   siJavascript,
   siJson,
+  siJupyter,
   siMarkdown,
   siOpenjdk,
+  siProcessingfoundation,
   siPython,
   siReact,
+  siReplit,
   siRust,
   siSwift,
   siTerraform,
   siToml,
   siTypescript,
+  siXml,
   siYaml,
   type SimpleIcon,
 } from 'simple-icons';
@@ -35,6 +40,8 @@ const languageToIcon: Record<string, SimpleIcon> = {
   tsx: siReact,
   python: siPython,
   py: siPython,
+  ipynb: siJupyter,
+  jupyter: siJupyter,
   bash: siGnubash,
   sh: siGnubash,
   shell: siGnubash,
@@ -46,6 +53,7 @@ const languageToIcon: Record<string, SimpleIcon> = {
   yml: siYaml,
   csharp: siDotnet,
   cs: siDotnet,
+  csproj: siDotnet,
   java: siOpenjdk,
   jav: siOpenjdk,
   hcl: siTerraform,
@@ -53,7 +61,11 @@ const languageToIcon: Record<string, SimpleIcon> = {
   tf: siTerraform,
   toml: siToml,
   editorconfig: siEditorconfig,
+  eslintrc: siEslint,
+  replit: siReplit,
   swift: siSwift,
+  processing: siProcessingfoundation,
+  pde: siProcessingfoundation,
   markdown: siMarkdown,
   md: siMarkdown,
   mdx: siMarkdown,
@@ -61,6 +73,7 @@ const languageToIcon: Record<string, SimpleIcon> = {
   gql: siGraphql,
   html: siHtml5,
   markup: siHtml5,
+  xml: siXml,
   css: siCss,
   go: siGo,
   golang: siGo,
@@ -83,10 +96,11 @@ function getTitleExtension(title: string | undefined): string | undefined {
   }
   const fileName = title.split('/').pop() ?? '';
   const dotIndex = fileName.lastIndexOf('.');
-  if (dotIndex <= 0) {
+  if (dotIndex < 0) {
     return undefined;
   }
-  return fileName.slice(dotIndex + 1).toLowerCase();
+  const suffix = fileName.slice(dotIndex + 1).toLowerCase();
+  return suffix.length > 0 ? suffix : undefined;
 }
 
 export default function LanguageIcon({ language, title, className }: LanguageIconProps): ReactNode {
