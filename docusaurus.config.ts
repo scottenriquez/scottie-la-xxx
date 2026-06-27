@@ -126,6 +126,7 @@ const config: Config = {
           label: 'Fantasy Football',
           position: 'left',
         },
+        { to: '/uses', label: 'Uses', position: 'left' },
         {
           href: 'https://github.com/scottenriquez',
           label: 'GitHub',

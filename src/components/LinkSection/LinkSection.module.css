@@ -45,6 +45,10 @@
   color: var(--accent-football);
 }
 
+.linkUses:hover {
+  color: var(--accent-uses);
+}
+
 .linkGithub:hover {
   color: var(--accent-github);
 }
