@@ -25,7 +25,7 @@ The first deployment fails unless a Cloud9 environment has been created from the
 
 ## CloudFormation Template
 
-```yaml
+```yaml title='cloud9-template.yaml'
 Resources:
   rCloud9Environment:
     Type: AWS::Cloud9::EnvironmentEC2
@@ -51,7 +51,7 @@ This template can be deployed via the AWS Console or the AWS CLI.
 
 ## Initialization Script
 
-```shell
+```shell title='initialize.sh'
 wget https://github.com/dotnet/core/files/2186067/openssl-libs-ami.spec.txt
 rpmbuild --bb openssl-libs-ami.spec.txt
 sudo rpm -i /usr/src/rpm/RPMS/x86_64/openssl-libs-1.0.0-0.x86_64.rpm
@@ -73,7 +73,7 @@ The Bash script does the following:
 
 ## User Settings
 
-```json
+```json title='settings.json'
 {
   "ace": {
     "@behavioursEnabled": true,

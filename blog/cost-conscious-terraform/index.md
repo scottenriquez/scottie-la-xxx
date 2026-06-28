@@ -40,7 +40,7 @@ The following dependencies are required to deploy the pipeline infrastructure:
 
 Rather than installing Node.js, CDK, Terraform, and all other dependencies on your local machine, you can alternatively create a [Cloud9 IDE](https://aws.amazon.com/cloud9/) with these pre-installed via the Console or with a CloudFormation template:
 
-```yaml
+```yaml title='cloud9-template.yaml'
 Resources:
   rCloud9Environment:
     Type: AWS::Cloud9::EnvironmentEC2
@@ -61,7 +61,7 @@ Before deploying the CDK application, [store the Infracost API key in an SSM par
 
 To install and deploy the pipeline, use the following commands:
 
-```shell
+```shell title='install.sh'
 git clone https://github.com/scottenriquez/infracost-cdk-pipeline.git
 cd infracost-cdk-pipeline/infracost-cdk-pipeline/
 npm install
@@ -113,7 +113,7 @@ resource_usage:
 
 Commit these changes to the `feature` branch and open a pull request. Doing so will trigger the CodeBuild project that computes the cost delta and publishes the payload to the SNS topic if the amount increases. Assuming you subscribed to the SNS topic via email, some JSON should be in your inbox. Here's an abridged example output:
 
-```json
+```json title='output.json'
 {
   "version": "0.2",
   "currency": "USD",
@@ -207,7 +207,7 @@ Technology alone will not resolve all cost optimization challenges. However, int
 
 If you deployed resources via the deployment pipeline, be sure to either use the `DestroyTerraform` CodeBuild project or run:
 
-```shell
+```shell title='terraform-destroy.sh'
 # set the bucket name variable or replace with a value
 # the bucket name nomenclature is 'terraform-state-' followed by a UUID
 # this can also be found via the Console
@@ -217,7 +217,7 @@ terraform destroy
 
 To destroy the pipeline itself run:
 
-```shell
+```shell title='cdk-destroy.sh'
 cdk destroy
 ```
 

@@ -33,7 +33,7 @@ You can find a complete working example [here](https://github.com/scottenriquez/
 Ensure that .NET 5 and the latest version of CDK are installed. To create a solution skeleton, run these commands in the
 root directory:
 
-```shell
+```shell title='initialize.sh'
 # note that CDK uses this directory name as the solution name
 mkdir LambdaApiSolution
 cd LambdaApiSolution
@@ -70,7 +70,7 @@ At the time of writing, the generated CDK template uses .NET Core 3.1. Inside of
 
 From the `/LambdaApiSolution` directory, run these commands to create the serverless skeleton:
 
-```shell
+```shell title='scaffold-lambda.sh'
 # install the latest version of the .NET Lambda templates
 dotnet new -i Amazon.Lambda.Templates
 cd src/
@@ -87,7 +87,7 @@ dotnet test LambdaApiSolution.sln
 
 First, add the Lambda CDK NuGet package to the CDK project.
 
-```xml
+```xml title='LambdaApiSolution/src/LambdaApiSolution/LambdaApiSolution.csproj'
 <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.90.0"/>
 ```
 
@@ -146,7 +146,7 @@ event handler's parameter currently accepts a single string.
 
 Add the following packages to the CDK project:
 
-```xml
+```xml title='LambdaApiSolution/src/LambdaApiSolution/LambdaApiSolution.csproj'
 <PackageReference Include="Amazon.CDK.AWS.APIGatewayv2" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.APIGatewayv2.Integrations" Version="1.90.0"/>
 ```
@@ -215,7 +215,7 @@ client like Postman. Add a string to the body parameter of the `POST` request. T
 with API Gateway as well as the Lambda function. To test via the Lambda Console, update the test event from before to
 match the `APIGatewayProxyRequest` parameter:
 
-```json
+```json title='event.json'
 {
   "body": "hello"
 }
@@ -231,7 +231,7 @@ a plaintext format object. Note that for this codebase, I've named my secret `Gi
 
 Next, add the following packages to the CDK project:
 
-```xml
+```xml title='LambdaApiSolution/src/LambdaApiSolution/LambdaApiSolution.csproj'
 <PackageReference Include="Amazon.CDK.AWS.CodeBuild" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.CodeDeploy" Version="1.90.0"/>
 <PackageReference Include="Amazon.CDK.AWS.CodePipeline" Version="1.90.0"/>
@@ -297,14 +297,14 @@ namespace LambdaApiSolution
 
 Remove the following line from `Program.cs` since the pipeline will deploy the API from now on:
 
-```csharp
+```csharp title='Program.cs'
 new LambdaApiSolutionStack(app, "LambdaApiSolutionStack");
 ```
 
 Delete the previous stack, commit the latest changes to the source code so that they'll be available when the pipeline
 fetches the repo, and finally deploy the pipeline:
 
-```shell
+```shell title='deploy.sh'
 cdk destroy
 git add .
 git commit -m "Adding source code to GitHub repository"

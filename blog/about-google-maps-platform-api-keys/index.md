@@ -10,7 +10,7 @@ Recently, Google announced significant changes to the Maps platform to mixed rea
 
 It’s also worth noting that a valid API key is now required. This may seem like a non-factor to developers properly managing credentials on the backend as to not expose them to the client. However, the Maps Embed API requires the key as a parameter in an HTML `script` tag like so:
 
-```html
+```html title='index.html'
 src="https://maps.googleapis.com/maps/api/js?key=MY_API_KEY"
 ```
 
@@ -22,7 +22,7 @@ Creating an API key for Google Maps is quite simple, but it’s not obvious that
 
 ## Restricting Referrer Domains or IP Addresses
 
-Even if you’ve only allowed your key access to the minimum APIs, by default any site on any domain could rack up charges on your Google account by simply using your key on their site. To combat this, you should specify restrictions via a regular expression that fits your domain or IP. For example, my key is restricted to `https://www.scottie.is/*`.
+Even if you’ve only allowed your key access to the minimum APIs, by default any site on any domain could rack up charges on your Google account by simply using your key on their site. To combat this, you should specify restrictions via a regular expression that fits your domain or IP. For example, my key is restricted to `https://scottie.la/*`.
 
 ## Set a Billing Alarm
 

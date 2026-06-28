@@ -182,7 +182,7 @@ Application Composer is a new service from AWS that allows developers to map out
 
 While the creation process is UI-driven, the output is a SAM template (i.e., a CloudFormation template with a `Transform` statement). For example, the diagram above creates the following:
 
-```yaml
+```yaml title='exported-template.yaml'
 Transform: AWS::Serverless-2016-10-31
 Resources:
   Bucket:

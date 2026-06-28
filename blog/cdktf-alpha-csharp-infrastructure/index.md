@@ -34,7 +34,7 @@ The following command line tools are required for getting started:
 
 First, install the `cdktf` CLI:
 
-```shell
+```shell title='install.sh'
 npm install -g cdktf-cli
 # 0.3
 cdktf --version
@@ -42,7 +42,7 @@ cdktf --version
 
 After that, create the .NET project using the `cdktf` CLI:
 
-```shell
+```shell title='initialize.sh'
 mkdir resources
 cd resources
 # the --local flag refers to local Terraform state management
@@ -66,13 +66,13 @@ This action creates several files, including a `cdktf.json` file. Inside this co
 
 After adding the provider configuration, generate the provider objects using the following command:
 
-```shell
+```shell title='generate-provider.sh'
 cdktf get
 ```
 
 The generated objects are stored in the newly created `.gen/` folder. Add this as a reference:
 
-```xml
+```xml title='MyTerraformStack.csproj' 
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -169,7 +169,7 @@ Note how this functionally behaves the same as the corresponding Terraform HCL w
 
 Once finished adding the data source and resource, the project can be built and deployed assuming that the AWS credentials are available (i.e., `aws configure` has been run).
 
-```shell
+```shell title='build-deploy-destroy.sh'
 dotnet build
 cdktf deploy
 # when ready

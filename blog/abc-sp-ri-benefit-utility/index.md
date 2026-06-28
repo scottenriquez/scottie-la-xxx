@@ -88,7 +88,7 @@ Policies:
 
 ### Creating a Virtual Environment
 
-```shell
+```shell title='install.sh'
 git clone git@github.com:aws-samples/aws-billing-conductor-sp-ri-benefit-utility.git
 cd aws-billing-conductor-sp-ri-benefit-utility
 python3.12 -m venv '.venv'
@@ -98,7 +98,7 @@ pip install -r sam_sp_ri_utility/requirements.txt
 
 ### Running Unit Tests
 
-```shell
+```shell title='test.sh'
 pytest
 ```
 
@@ -106,7 +106,7 @@ pytest
 
 ### Building Using AWS SAM
 
-```shell
+```shell title='build.sh'
 sam build
 ```
 
@@ -114,7 +114,7 @@ sam build
 
 First, ensure that [local AWS credentials are configured correctly](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 
-```shell
+```shell title='deploy.sh'
 sam deploy --guided
 ```
 

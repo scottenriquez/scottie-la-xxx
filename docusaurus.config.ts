@@ -157,6 +157,7 @@ const config: Config = {
         'json',
         'yaml',
         'csharp',
+        'java',
         'hcl',
         'toml',
         'sql',

@@ -40,7 +40,7 @@ This [GitHub project](https://github.com/teals-heights-high-school/repl-it-examp
 
 In terms of source code, only the `"Hello, World!"` program is included:
 
-```csharp title='Main.java'
+```java title='Main.java'
 class Main {
     public static void main(String[] args) {
         System.out.println("Hello, world!");

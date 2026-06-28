@@ -1396,7 +1396,7 @@ export class MyChart extends Chart {
 
 Which produces:
 
-```yaml
+```yaml title='deployment.yaml'
 apiVersion: apps/v1
 kind: Deployment
 metadata:

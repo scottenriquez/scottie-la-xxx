@@ -16,7 +16,7 @@ Getting the initial project structure and unit tests set up took some research, 
 
 Use the Swift CLI to create an executable project with this command: `swift package init --type executable`. It's important to note that the names will be created based on the current directory. If you want to use a name for your project other than the root directory, create a new folder and run the command there.
 
-```shell
+```shell title='initialize.sh'
 mkdir AlternatePackageName
 cd AlternatePackageName
 swift package init --type executable
@@ -41,7 +41,7 @@ To open in Xcode, run `open Package.swift`. Swift has created a project with the
 
 Executable modules are not testable. The implication is that functions cannot be tested inside `/Sources/SwiftPackageExecutable` (in the same directory as `main.swift`). Doing so will throw an unhelpful compiler error. The alternative is to move the logic to a library module. This requires a change to the directory structure and default `Package.swift`.
 
-```swift
+```swift title='Package.swift'
 // swift-tools-version:5.2
 
 import PackageDescription
@@ -62,7 +62,7 @@ let package = Package(
 
 First, set the `products` variable in between the `name` and `dependencies`. Create `.executable` and `.library` entries like so:
 
-```swift
+```swift title='Package.swift'
 name: "SwiftPackageExecutable",
 products: [
     .executable(name: "SwiftPackageExecutable", targets: ["SwiftPackageExecutable"]),
@@ -73,7 +73,7 @@ dependencies: [],
 
 Next, in the array of targets, add another `.target` for the library, and update the dependencies. The executable and test modules should depend on the library.
 
-```swift
+```swift title='Package.swift'
 .target(
     name: "SwiftPackageExecutable",
     dependencies: ["SwiftPackageLibrary"]),
@@ -87,7 +87,7 @@ Next, in the array of targets, add another `.target` for the library, and update
 
 The completed `Package.swift` is as follows:
 
-```swift
+```swift title='Package.swift'
 // swift-tools-version:5.2
 
 import PackageDescription
@@ -117,9 +117,9 @@ Lastly, create a new directory inside of `/Sources/` for the new library.
 
 ## Creating Logic and Unit Tests
 
-For a simple example, add some easily testable logic like addition. The Swift file should reside at `/Sources/SwiftPackageLibrary/Add.swift`.
+For a simple example, add some easily testable logic like addition. The Swift file should reside at `Sources/SwiftPackageLibrary/Add.swift`.
 
-```swift
+```swift title='Sources/SwiftPackageLibrary/Add.swift'
 import Foundation
 
 public struct Add {
@@ -131,7 +131,7 @@ public struct Add {
 
 Inside of the test module, add a standard test for the library module function.
 
-```swift
+```swift title='Tests/SwiftPackageExecutableTests/AddTests.swift'
 import XCTest
 @testable import SwiftPackageLibrary
 
@@ -157,7 +157,7 @@ final class AddTests: XCTestCase {
 
 Lastly, update `XCTestsManifest`.
 
-```swift
+```swift title='Tests/SwiftPackageExecutableTests/XCTestManifests.swift'
 import XCTest
 
 #if !canImport(ObjectiveC)

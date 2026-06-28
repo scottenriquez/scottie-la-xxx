@@ -14,7 +14,7 @@ Last week, [AWS announced the public preview for SAM Pipelines](https://aws.amaz
 
 I opted to create a container image for my Lambda function for my testing, so the core dependencies are the AWS CLI, SAM CLI, and Docker.
 
-```shell
+```shell title='check-dependencies.sh'
 # aws-cli/2.2.23 Python/3.9.6 Darwin/20.6.0 source/x86_64 prompt/off
 aws --version
 # SAM CLI, version 1.27.2
@@ -27,7 +27,7 @@ docker --version
 
 First, create a starter application. I chose `amazon/nodejs14.x-base` for a base image. Then, run the `pipeline` command with the `--bootstrap` flag to configure the CI/CD provider and requisite AWS resources like IAM policies.
 
-```shell
+```shell title='initialize.sh'
 sam init
 sam pipeline init --bootstrap
 ```

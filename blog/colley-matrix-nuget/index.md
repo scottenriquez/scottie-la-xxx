@@ -14,13 +14,13 @@ It's very well documented that I'm a huge college football fan. We're presently 
 
 The `ColleyMatrix` client exposes two methods: `SimulateGame` and `Solve`. The client constructor takes one argument: `numberOfTeams`.
 
-```csharp
+```csharp title='ExampleUsage.cs'
 ColleyMatrix colleyMatrix = new ColleyMatrix(numberOfTeams);
 ```
 
 This will create a client with an underlying sparse matrix where the dimensions span from 0 to `numberOfTeams - 1` corresponding to each team's ID. Next, we can simulate matchups.
 
-```csharp
+```csharp title='ExampleUsage.cs'
 colleyMatrix.SimulateGame(winnerId, loserId);
 ```
 
@@ -28,7 +28,7 @@ Note that if the `winnerId` or `loserId` is not valid respective to the sparse m
 
 You can solve the sparse matrix at any point without modifying the internal state. The solved vector that is returned is a list of scores with the highest score indicating the best team.
 
-```csharp
+```csharp title='ExampleUsage.cs'
 IEnumerable<double> solvedVector = colleyMatrix.Solve();
 ```
 

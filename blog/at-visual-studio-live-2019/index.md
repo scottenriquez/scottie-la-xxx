@@ -66,7 +66,7 @@ These are features that I would have previously told clients were completely out
 
 .NET Core now supports built-in service health checks that can be easily configured in `Startup.cs` with a couple of lines of code.
 
-```csharp
+```csharp title='Startup.cs'
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
@@ -87,7 +87,7 @@ public class Startup
 
 This creates a `/health` endpoint that returns an HTTP status code and brief message indicating whether or not the API is available and can process requests. This is ideal for integrating with load balancers, container orchestrators, and reports. If the default checks don't suffice for your needs, you can also create custom health check by implementing the `IHealthCheck` interface and registering it. Be aware that health checks are intended to be able to run quickly, so if the custom health check has to open connections with other systems or perform lengthy I/O, the polling cycle needs to account for that.
 
-```csharp
+```csharp title='MyHealthCheck.cs'
 public class MyHealthCheck : IHealthCheck
 {
     public Task CheckHealthAsync(
@@ -101,7 +101,7 @@ public class MyHealthCheck : IHealthCheck
 
 You can also create simple HTTP endpoints inline in `Startup.cs` without creating an API controller class in addition to registering API controllers normally.
 
-```csharp
+```csharp title='Startup.cs'
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
@@ -119,7 +119,7 @@ Find the complete source code [here](https://github.com/scottenriquez/visual-stu
 
 AWS has built extensive CLI tooling and templating for building .NET Core serverless functions on Lambda. Assuming you have .NET Core installed and added to your `PATH`, you can run `dotnet new -i Amazon.Lambda.Templates` to install the Lambda templates and `dotnet tool install -g Amazon.Lambda.Tools` to install the Lambda tools. With a few commands, you can have a brand new .NET Core serverless function created, deployed to AWS, and invoke the function from the command line.
 
-```shell
+```shell title='initialize-dotnet-lambda.sh'
 #!/usr/env/bin bash
 # create a new serverless function from the Lambda template
 dotnet new lambda.EmptyFunction --name MyFunction
@@ -170,7 +170,7 @@ protected override async Task ExecuteAsync(CancellationToken stoppingToken)
 
 I also implemented a simple deployment script to migrate the `.service` file to the correct folder for systemd, map the executable, and start the service. The rest is handled by .NET Core.
 
-```shell
+```shell title='start-service.sh'
 #!/usr/env/bin bash
 dotnet build
 dotnet publish -c Release -r linux-x64 --self-contained true

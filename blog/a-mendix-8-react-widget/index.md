@@ -50,7 +50,7 @@ When editing a widget in Mendix Studio Pro, there are a set of common properties
 
 If you elected to use TypeScript, an interface is generated for you as well.
 
-```typescript
+```typescript title='CommonProps.ts'
 interface CommonProps {
   name: string;
   class: string;

@@ -10,15 +10,11 @@ tags: ['Programming']
 
 `spr` is a CLI tool for generating Markdown pages in the [league Gatsby site](https://www.thewinnerisatryhard.org) for power rankings posts with Sleeper data injected. The source code is hosted on [GitHub](https://github.com/the-winner-is-a-tryhard/power-rankings-markdown-cli).
 
-## Build Status
-
-[![Azure Pipelines](https://dev.azure.com/scottenriquez/Sleeper%20Power%20Rankings%20Markdown%20CLI/_apis/build/status/the-winner-is-a-tryhard.power-rankings-markdown-cli?branchName=master)](https://dev.azure.com/scottenriquez/Sleeper%20Power%20Rankings%20Markdown%20CLI/_build/latest?definitionId=5&branchName=master)
-
 ## Installation and Dependencies
 
 Clone the repository, install NPM dependencies, and create a symlink in the global folder.
 
-```shell
+```shell title='install.sh'
 git clone git@github.com:the-winner-is-a-twiath/power-rankings-markdown-cli.git
 cd power-rankings-markdown-cli
 npm install
@@ -28,7 +24,7 @@ spr --version
 
 The CLI source code doesn't store any secrets, so ensure that the AWS CLI is installed and that the credentials are configured at `~/.aws/credentials`.
 
-```shell
+```shell title='.aws/credentials'
 [default]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY

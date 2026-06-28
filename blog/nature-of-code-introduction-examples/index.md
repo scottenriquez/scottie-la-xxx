@@ -22,7 +22,7 @@ Daniel implements numerous examples using a programming language called [Process
 
 A random walk traces a path through a Cartesian plane going in a random direction with each step (i.e., one pixel). The walks are built by plotting individual pixels as rectangles in Scalable Vector Graphics (SVGs). The program starts at `(200, 400)` for each walk to represent the center of the Cartesian plane. The `walk` function chooses a random direction and updates the internal state to indicate that a step has been taken.
 
-```javascript
+```javascript title='randomWalk.js'
 walk(pixels) {
     const step = Math.floor(Math.random() * 4);
     switch (step) {
@@ -48,7 +48,7 @@ walk(pixels) {
 
 The `walkWeightedRight` function illustrates the same functionality but with a non-uniform distribution. In this code, there's a 70% chance of moving to the right.
 
-```javascript
+```javascript title='randomWalk.js'
 walkWeightedRight(pixels) {
     const step = Math.floor(Math.random() * 10);
     if (step <= 6) {
@@ -72,7 +72,7 @@ walkWeightedRight(pixels) {
 
 The `randomWalk` function calls the `walk` or `walkWeightedRight` function until an edge is hit. The SVG is then rendered based on the pixels stored in memory representing the path.
 
-```javascript
+```javascript title='randomWalk.js'
 randomWalk(weightedRight) {
     const pixels = [];
     this.steps.current = 0;
@@ -107,7 +107,7 @@ The random walks are capped at 10,000 pixels for performance reasons.
 
 This example plots random numbers generated with a normal distribution (i.e., no specific weights).
 
-```javascript
+```javascript title='normalDistribution.js'
 generateRandomData() {
     const datasetSize = 100;
     const maxValue = 100;
@@ -130,7 +130,7 @@ generateRandomData() {
 
 This example shows how to create a bell curve for one thousand monkeys ranging in height from 200 to 300 pixels with a normal distribution. First, the code generates the data.
 
-```javascript
+```javascript title='bellCurve.js'
 generateHeightData() {
     const data = [];
     const datasetSize = 1000;
@@ -149,7 +149,7 @@ generateHeightData() {
 
 Next, the code computes the standard deviation.
 
-```javascript
+```javascript title='bellCurve.js'
 computeMean(array) {
     let sum = 0;
     for(let index = 0; index < array.length; index++) {
@@ -169,7 +169,7 @@ computeStandardDeviation(data, mean) {
 
 Lastly, the code groups each monkey by standard deviations for the x-axis and plots the frequency counts for the y-axis.
 
-```javascript
+```javascript title='bellCurve.js'
 generateHeightBellCurve() {
     const data = this.generateHeightData();
     const meanHeight = this.computeMean(data);

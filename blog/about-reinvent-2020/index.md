@@ -18,7 +18,7 @@ tags: ['Cloud']
 
 AWS Lambda supports Docker images up to 10GB in size. They've also provided base images for Lambda runtimes in the new [public ECR](https://gallery.ecr.aws/). For reference, the [base Node.js 12 image](https://gallery.ecr.aws/lambda/nodejs) is ~450MB. The Serverless Application Model (SAM) CLI has already been updated for container support. Instead of specifying a `--runtime`, engineers can now use the `--base-image` flag.
 
-```shell
+```shell title='initialize.sh'
 sam --version
 # 1.13.2
 sam init --base-image amazon/nodejs12.x-base
@@ -26,7 +26,7 @@ sam init --base-image amazon/nodejs12.x-base
 
 This creates a `Dockerfile` for the function.
 
-```dockerfile
+```dockerfile title='Dockerfile'
 FROM public.ecr.aws/lambda/nodejs:12
 COPY app.js package.json ./
 RUN npm install
@@ -35,7 +35,7 @@ CMD ["app.lambdaHandler"]
 
 The `deploy` command also includes container registry support via ECR. With a quick `--guided` deployment, I produced the following `samconfig`:
 
-```toml
+```toml title='samconfig.toml'
 version = 0.1
 [default]
 [default.deploy]
@@ -99,7 +99,7 @@ infrastructure:
 
 Lastly, a CloudFormation template is used to describe the infrastructure and DevOps automation like CodePipeline. Note the use of Jinja templating (specifically `environment.ttl_attribute`) to reference shared resources and input parameters.
 
-```yaml title='cloudformation.yaml'
+```yaml title='template.yaml'
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: This environment holds a simple DDB table shared between services.
@@ -134,7 +134,7 @@ Resources:
 
 When the template is finished, compress the source code, push to S3, create a template, and publish it.
 
-```shell
+```shell title='proton.sh'
 # create an environment template
 aws proton-preview create-environment-template \
   --region us-east-1 \
@@ -185,7 +185,7 @@ The prospect of having macOS support for EC2 instances is exciting, but the curr
 
 Despite the cost, I still wanted to get my hands on an instance. I hit two roadblocks while getting started. First, I had to increase my service quota for `mac1` dedicated hosts. Second, I had to try several availability zones to find one with dedicated hosts available (`use1-az6`). I used the following CLI commands to provision a host and instance.
 
-```shell
+```shell title='provision.sh'
 # create host and echo ID
 aws ec2 allocate-hosts --instance-type mac1.metal \
   --availability-zone us-east-1a --auto-placement on \
@@ -213,7 +213,7 @@ After that, I was able to SSH in and experience EC2 macOS in all its glory.
 
 Thanks to [this awesome blog post](https://simple-minds-think-alike.hatenablog.com/entry/ec2-mac-instance), I was able to put together an EC2 user data script for remote access.
 
-```shell
+```shell title='enable-remote-access.sh'
 sudo su
 dscl . -create /Users/Scottie
 dscl . -create /Users/Scottie UserShell /bin/zsh
@@ -242,7 +242,7 @@ According to [AWS](https://aws.amazon.com/blogs/developer/net-5-aws-lambda-suppo
 
 While AWS has already released the [.NET 5 public ECR image](https://gallery.ecr.aws/lambda/dotnet), SAM support as a `--base-image` hasn't been implemented yet as of version `1.13.2`. Porting from a .NET Core starter template is as easy as changing the `<TargetFramework>` in the `.csproj` file and updating the `Dockerfile`.
 
-```Dockerfile
+```Dockerfile title='Dockerfile'
 FROM mcr.microsoft.com/dotnet/sdk:5.0 as build-image
 
 ARG FUNCTION_DIR="/build"

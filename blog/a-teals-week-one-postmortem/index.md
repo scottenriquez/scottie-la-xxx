@@ -37,7 +37,7 @@ that I wrote to randomly select a student’s name when I ask a question. This s
 finally put names to faces on a regular basis as well as make our formative assessments more uniform and accurate. If
 this doesn’t pan out, my contingency is to simply make flashcards.
 
-```csharp
+```java title='TEALSRandomNameSelector.java'
 public class TEALSRandomNameSelector {
     public static void main(String[] args) {
         try {

@@ -113,7 +113,7 @@ Though there is no configuration managed in this repository for code styling, no
 
 Via the Azure DevOps web UI, you can directly commit an initial `azure-pipelines.yml` file to the root of the repository and configure the trigger (i.e. commits). Once the NPM scripts are properly set up like above, the build stage can be configured to install dependencies, run unit tests, and handle linting in a few lines of code. Note that I've added an archive step because Lambda functions are deployed as ZIP files later in the pipeline.
 
-```yaml title='azure-pipelines.yml'
+```yaml title='azure-pipelines.yaml'
 stages:
   - stage: Build
     jobs:
@@ -193,7 +193,7 @@ One of the core goals of this project is to create a complete solution with ever
 
 With this file in hand, creating and/or updating the infrastructure can be done via the command line using the AWS CLI. After generating an access key and secret key, the CLI can be installed and configured with a few commands. Note that I have specified the commands for Ubuntu (apt-get package manager) since that's the virtual machine image that was specified in the Azure Pipelines YAML.
 
-```shell
+```shell title='configure-aws-cli.sh'
 sudo apt-get install awscli
 aws configure set aws_access_key_id $(AWS_ACCESS_KEY_ID)
 aws configure set aws_secret_access_key $(AWS_SECRET_KEY_ID)

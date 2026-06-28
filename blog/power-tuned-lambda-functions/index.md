@@ -64,7 +64,7 @@ Rather than installing Node.js, CDK, Terraform, and all other dependencies on yo
 create a [Cloud9 IDE](https://aws.amazon.com/cloud9/) with these pre-installed via the Console or with a CloudFormation
 template:
 
-```yaml
+```yaml title='cloud9-template.yaml'
 Resources:
   rCloud9Environment:
     Type: AWS::Cloud9::EnvironmentEC2
@@ -83,7 +83,7 @@ Resources:
 
 To install and deploy the pipeline, use the following commands:
 
-```shell
+```shell title='install.sh'
 git clone https://github.com/scottenriquez/lambda-power-tuned.git
 cd lambda-power-tuned
 python3 -m venv .venv
@@ -250,7 +250,7 @@ the [documentation on GitHub](https://github.com/alexcasalboni/aws-lambda-power-
 If you deployed resources via the deployment pipeline, be sure to either use the `DestroyTerraform` CodeBuild project or
 run:
 
-```shell
+```shell title='terraform-destroy.sh'
 # set the bucket name variable or replace with a value
 # the bucket name nomenclature is 'terraform-state-' followed by a UUID
 # this can also be found via the Console
@@ -260,7 +260,7 @@ terraform destroy
 
 To destroy the pipeline itself run:
 
-```shell
+```shell title='cdk-destroy.sh'
 cdk destroy
 ```
 

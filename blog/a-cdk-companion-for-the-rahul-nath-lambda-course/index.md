@@ -21,7 +21,7 @@ While infrastructure as code (IaC) has existed within the AWS ecosystem for over
 
 Elaborating on the final point, here is an example unit test for ensuring that a DynamoDB table is destroyed when the stack is. The default behavior is for the table to be retained, leading to clutter and cost since this is a non-production project. This is an example how of IaC can be meaningfully tested:
 
-```csharp
+```csharp title='InfrastructureAsCodeTest.cs'
 [Fact]
 public void Stack_DynamoDb_ShouldHaveDeletionPolicyDelete()
 {
@@ -111,7 +111,7 @@ DockerImageFunction sqsDockerImageFunction = new DockerImageFunction(this, "Lamb
 
 AWS offers a browser-based IDE called Cloud9 that has nearly all required dependencies installed. The IDE can be provisioned from the AWS Console or via infrastructure as code. Unfortunately, Cloud9 does not support Graviton-based instances yet. Below is a CloudFormation template for provisioning an environment with the source code pre-loaded:
 
-```yaml
+```yaml title='cloud9-template.yaml'
 Resources:
   rCloud9Environment:
     Type: AWS::Cloud9::EnvironmentEC2
@@ -128,7 +128,7 @@ Resources:
 
 Note that the instance must be deployed to a public subnet. The Cloud9 AMI does not have .NET 6 pre-installed. To do so, run the following commands:
 
-```shell
+```shell title='install-dotnet.sh'
 sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
 sudo yum install dotnet-sdk-6.0
 ```
@@ -144,7 +144,7 @@ Each section of the course has a separate solution in the repository:
 
 Each solution is structured in the same way. I generated the CDK app using the CLI and used the Lambda templates to create my functions like so:
 
-```shell
+```shell title='initialize.sh'
 # create the CDK application
 # the name is derived from the directory
 # this snippet assumes the directory is called Lambda
@@ -221,7 +221,7 @@ public class LambdaTriggersStack : Stack
 
 To deploy the infrastructure, navigate to the corresponding section folder and use the CDK CLI like so:
 
-```shell
+```shell title='deploy.sh'
 cd LambdaTriggers
 cdk deploy
 ```
@@ -230,6 +230,6 @@ cdk deploy
 
 To destroy resources, run this command in the same directory:
 
-```shell
+```shell title='destroy.sh'
 cdk destroy
 ```

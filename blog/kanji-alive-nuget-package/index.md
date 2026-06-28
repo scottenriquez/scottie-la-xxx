@@ -12,15 +12,15 @@ This NuGet package provides a C# interface to easily query and fetch kanji data 
 
 ## Usage
 
-All of the API endpoints are accessible using the `KanjiAliveClient`. To use the client, simply instantiate while passing your Mashape API key as the sole constructor parameter. You can obtain an API key [here](https://market.mashape.com/kanjialive/learn-to-read-and-write-japanese-kanji).
+All the API endpoints are accessible using the `KanjiAliveClient`. To use the client, simply instantiate while passing your Mashape API key as the sole constructor parameter. You can obtain an API key [here](https://market.mashape.com/kanjialive/learn-to-read-and-write-japanese-kanji).
 
-```csharp
+```csharp title='ExampleUsage.cs'
 KanjiAliveClient client = new KanjiAliveClient("MY_API_KEY");
 ```
 
 Nested inside of the main client are three subclients that mirror the structure of the API endpoints: `AdvancedSearchClient`, `BasicSearchClient`, and `KanjiDetailsClient`. The endpoints are exposed as asynchronous instance methods, so be sure to await them.
 
-```csharp
+```csharp title='ExampleUsage.cs'
 <List<KanjiSimpleResponse>> apiResponse = await client.AdvancedSearchClient.SearchByKanjiStrokeNumber(5);
 ```
 
@@ -28,7 +28,7 @@ Nested inside of the main client are three subclients that mirror the structure 
 
 In order to obfuscate your API key for integration tests, add your API key to the Windows Registry as a string value with the key set to `MASHAPE_API_KEY`. This allows you to discreetly fetch your key at runtime instead of exposing it in the source code.
 
-```csharp
+```csharp title='ExampleUsage.cs'
 KanjiAliveClient client = new KanjiAliveClient(Environment.GetEnvironmentVariable("MASHAPE_API_KEY"));
 ```
 

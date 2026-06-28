@@ -79,7 +79,7 @@ class NVector {
 
 After instantiating two `NVector` objects, a third vector can be created to capture the sum. This vector addition is the basis for simulating motion:
 
-```javascript
+```javascript title='additionExample.js'
 let circleLocation = new NVector(1, 2, 3);
 const circleVelocity = new NVector(4, 5, 6);
 circleLocation = circleLocation.add(circleVelocity);
@@ -151,7 +151,7 @@ $$
 w_{z} = u_{z} * n
 $$
 
-```javascript
+```javascript title='scalarMultiplicationExample.js'
 const u = new NVector(1, 3, 5);
 const n = 3;
 const w = u.scale(n);
@@ -165,7 +165,7 @@ $$
 {\displaystyle \mathbf {u} \cdot \mathbf {v} =\sum _{i=1}^{n}u_{i}v_{i}=u_{1}v_{1}+\cdots +u_{n}v_{n}}
 $$
 
-```javascript
+```javascript title='dotProductExample.js'
 const u = new NVector(1, 3, -5);
 const v = new NVector(4, -2, -1);
 const w = u.dot(v);
@@ -187,7 +187,7 @@ $$
 
 With this code in hand (plus [a graphics library called Three.js](https://threejs.org/)), we can begin to model vectors in three-dimensional space:
 
-```javascript
+```javascript title='vectorExample.js'
 // additionally, a line is drawn between the two vectors
 const vectors = [
   // use the graphics library's implementation of a vector instead of NVector

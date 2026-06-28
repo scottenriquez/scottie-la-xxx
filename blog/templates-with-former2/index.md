@@ -16,7 +16,7 @@ I've been making a concerted effort lately to use infrastructure as code via Clo
 
 Former2 takes a client-side approach to infrastructure as code template generation and has support for [Terraform](https://www.terraform.io/) and [CDK](https://aws.amazon.com/cdk/). Instead of an EC2 instance, it uses the JavaScript SDKs via your browser to make all requisite API calls. You can even use the static website hosted on the public internet. If you're not keen on the idea of passing read-only IAM credentials to a third-party website, [clone the repository](https://github.com/iann0036/former2) and run the web application locally via the file system or Docker. I've also created a CloudFormation template to run it on an EC2 instance:
 
-```yaml
+```yaml title='template.yaml'
 AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   pAllowedIpCidr:

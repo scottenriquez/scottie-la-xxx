@@ -18,7 +18,7 @@ Note that you do not need to run ISP Complainer on a Raspberry Pi. I built this 
 
 Raspberry Pi uses ARM while most modern desktop processors use the x86 instruction set architecture. Because of this, you’ll need Node.js binaries compiled for ARM. In the early days, these files weren’t maintained like they are for x86 and compiling from the source code was required. This is still a viable option if you want to target a specific version, but you can also just use a download maintained by node-arm using the following commands:
 
-```shell
+```shell title='install-node.sh'
 wget http://node-arm.herokuapp.com/node_latest_armhf.deb
 sudo dpkg -i node_latest_armhf.deb
 ```

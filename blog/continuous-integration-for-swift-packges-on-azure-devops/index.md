@@ -16,14 +16,14 @@ However, in the spirit of using Swift like a general-purpose language, I wanted 
 
 The first thing to specify in the YAML is a trigger. The trigger denotes which branches in the Git repository the build should be run for. For example, to run the build only for master, the trigger would be as follows:
 
-```yaml
+```yaml title='azure-pipelines.yaml'
 trigger:
   - master
 ```
 
 In general, I want CI to run on all branches, so I use the following YAML instead:
 
-```yaml
+```yaml title='azure-pipelines.yaml'
 trigger:
   branches:
     include:
@@ -34,7 +34,7 @@ trigger:
 
 After specifying the trigger, Azure Pipelines needs to know what type of infrastructure to run the build on. At the time of writing, 5.2 is the latest stable version of Swift. Swift is not currently available in APT, Ubuntu's package manager. The binaries from the Swift download page target a specific LTS version of Ubuntu. The most recent version listed is 18.04, even though 20.04 released in April. Because of these specific requirements, I opted to target a specific version of Ubuntu in my YAML instead of `ubuntu-latest`. `ubuntu-latest` will be updated to 20.04 at some point, but this is outside my control.
 
-```yaml
+```yaml title='azure-pipelines.yaml'
 pool:
   vmImage: 'ubuntu-18.04'
 ```
@@ -54,7 +54,7 @@ Azure Pipelines supports steps, which are logical sections of the build for huma
 
 In the pipeline script, the steps above are written as Bash commands and wrapped in a `script` YAML statement.
 
-```yaml
+```yaml title='azure-pipelines.yaml'
 steps:
   - script: |
       sudo apt-get install clang libicu-dev
@@ -71,7 +71,7 @@ steps:
 
 With Swift successfully installed, the remainder of the build steps is scripted in additional `steps`. This commonly entails compiling, running unit tests, and static code analysis. For the sake of a simple executable package, this could be merely running `swift test` like below. Putting it all together, this YAML script is a solid base for many Swift package CI jobs.
 
-```yaml
+```yaml title='azure-pipelines.yaml'
 trigger:
   branches:
     include:
