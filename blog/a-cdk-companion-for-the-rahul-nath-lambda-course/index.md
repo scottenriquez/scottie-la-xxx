@@ -74,14 +74,14 @@ RUN dotnet build "LambdaWithApiGateway.DockerFunction.csproj" --configuration Re
 
 FROM build AS publish
 RUN dotnet publish "LambdaWithApiGateway.DockerFunction.csproj" \
-            --configuration Release \
-            # ARM
-            # --runtime linux-arm64
-            # x86
-            --runtime linux-x64 \
-            --self-contained false \
-            --output /app/publish \
-            -p:PublishReadyToRun=true
+--configuration Release \
+# ARM
+# --runtime linux-arm64
+# x86
+--runtime linux-x64 \
+--self-contained false \
+--output /app/publish \
+-p:PublishReadyToRun=true
 
 FROM base AS final
 WORKDIR /var/task
