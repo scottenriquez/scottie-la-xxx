@@ -177,15 +177,15 @@ With all this in place, you can now unit test your library logic and expose it a
 ├── Package.swift
 ├── README.md
 ├── Sources
-    ├── SwiftPackageExecutable
-        └── main.swift
-    └── SwiftPackageLibrary
-        └── Add.swift
+  ├── SwiftPackageExecutable
+    └── main.swift
+  └── SwiftPackageLibrary
+    └── Add.swift
 └── Tests
-    ├── LinuxMain.swift
-    └── SwiftPackageExecutableTests
-        ├── AddTests.swift
-        └── XCTestManifests.swift
+  ├── LinuxMain.swift
+  └── SwiftPackageExecutableTests
+    ├── AddTests.swift
+    └── XCTestManifests.swift
 ```
 
 To run the executable, use `swift run`. To run the unit tests, use `swift test`.

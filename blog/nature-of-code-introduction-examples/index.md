@@ -24,25 +24,25 @@ A random walk traces a path through a Cartesian plane going in a random directio
 
 ```javascript title='randomWalk.js'
 walk(pixels) {
-    const step = Math.floor(Math.random() * 4);
-    switch (step) {
-        case 0:
-            this.coordinates.x++;
-            break;
-        case 1:
-            this.coordinates.x--;
-            break;
-        case 2:
-            this.coordinates.y++;
-            break;
-        default:
-            this.coordinates.y--;
-            break;
-    }
-    pixels.push({
-        x: this.coordinates.x,
-        y: this.coordinates.y
-    });
+  const step = Math.floor(Math.random() * 4);
+  switch (step) {
+    case 0:
+      this.coordinates.x++;
+      break;
+    case 1:
+      this.coordinates.x--;
+      break;
+    case 2:
+      this.coordinates.y++;
+      break;
+    default:
+      this.coordinates.y--;
+      break;
+  }
+  pixels.push({
+    x: this.coordinates.x,
+    y: this.coordinates.y
+  });
 }
 ```
 
@@ -50,23 +50,23 @@ The `walkWeightedRight` function illustrates the same functionality but with a n
 
 ```javascript title='randomWalk.js'
 walkWeightedRight(pixels) {
-    const step = Math.floor(Math.random() * 10);
-    if (step <= 6) {
-        this.coordinates.x++;
-    }
-    else if (step === 7) {
-        this.coordinates.x--;
-    }
-    else if (step === 8) {
-        this.coordinates.y++;
-    }
-    else {
-        this.coordinates.y--;
-    }
-    pixels.push({
-        x: this.coordinates.x,
-        y: this.coordinates.y
-    });
+  const step = Math.floor(Math.random() * 10);
+  if (step <= 6) {
+    this.coordinates.x++;
+  }
+  else if (step === 7) {
+    this.coordinates.x--;
+  }
+  else if (step === 8) {
+    this.coordinates.y++;
+  }
+  else {
+    this.coordinates.y--;
+  }
+  pixels.push({
+    x: this.coordinates.x,
+    y: this.coordinates.y
+  });
 }
 ```
 
@@ -74,22 +74,22 @@ The `randomWalk` function calls the `walk` or `walkWeightedRight` function until
 
 ```javascript title='randomWalk.js'
 randomWalk(weightedRight) {
-    const pixels = [];
-    this.steps.current = 0;
-    while (this.steps.current <= this.steps.max &&
-        this.coordinates.x < width - 1 && this.coordinates.x > 0
-        && this.coordinates.y < height - 1
-        && this.coordinates.y > 0)
-    {
-        if (weightedRight) {
-            this.walkWeightedRight(pixels);
-        }
-        else {
-            this.walk(pixels);
-        }
-        this.steps.current++;
+  const pixels = [];
+  this.steps.current = 0;
+  while (this.steps.current <= this.steps.max &&
+    this.coordinates.x < width - 1 && this.coordinates.x > 0
+    && this.coordinates.y < height - 1
+    && this.coordinates.y > 0)
+  {
+    if (weightedRight) {
+      this.walkWeightedRight(pixels);
     }
-    return pixels;
+    else {
+      this.walk(pixels);
+    }
+    this.steps.current++;
+  }
+  return pixels;
 }
 ```
 
@@ -109,16 +109,16 @@ This example plots random numbers generated with a normal distribution (i.e., no
 
 ```javascript title='normalDistribution.js'
 generateRandomData() {
-    const datasetSize = 100;
-    const maxValue = 100;
-    const data = [];
-    for(let index = 0; index < datasetSize; index++) {
-        data[index] = {
-            index: index,
-            value: Math.floor(Math.random() * maxValue)
-        }
+  const datasetSize = 100;
+  const maxValue = 100;
+  const data = [];
+  for(let index = 0; index < datasetSize; index++) {
+    data[index] = {
+      index: index,
+      value: Math.floor(Math.random() * maxValue)
     }
-    return data;
+  }
+  return data;
 }
 ```
 
@@ -132,18 +132,18 @@ This example shows how to create a bell curve for one thousand monkeys ranging i
 
 ```javascript title='bellCurve.js'
 generateHeightData() {
-    const data = [];
-    const datasetSize = 1000;
-    const baseHeight = 200;
-    const maxRandomValue = 100;
-    for(let index = 0; index < datasetSize; index++) {
-        data[index] = {
-            index: index,
-            // generate a height between 200 and 300
-            value: baseHeight + (Math.floor(Math.random() * maxRandomValue))
-        }
+  const data = [];
+  const datasetSize = 1000;
+  const baseHeight = 200;
+  const maxRandomValue = 100;
+  for(let index = 0; index < datasetSize; index++) {
+    data[index] = {
+      index: index,
+      // generate a height between 200 and 300
+      value: baseHeight + (Math.floor(Math.random() * maxRandomValue))
     }
-    return data.sort((current, next) => { return current.value - next.value });
+  }
+  return data.sort((current, next) => { return current.value - next.value });
 }
 ```
 
@@ -151,19 +151,19 @@ Next, the code computes the standard deviation.
 
 ```javascript title='bellCurve.js'
 computeMean(array) {
-    let sum = 0;
-    for(let index = 0; index < array.length; index++) {
-        sum += array[index].value;
-    }
-    return sum / array.length;
+  let sum = 0;
+  for(let index = 0; index < array.length; index++) {
+    sum += array[index].value;
+  }
+  return sum / array.length;
 }
 
 computeStandardDeviation(data, mean) {
-    let sumSquareDeviation = 0;
-    for(let index = 0; index < data.length; index++) {
-        sumSquareDeviation += Math.pow(data[index].value - mean, 2);
-    }
-    return Math.sqrt(sumSquareDeviation / data.length);
+  let sumSquareDeviation = 0;
+  for(let index = 0; index < data.length; index++) {
+    sumSquareDeviation += Math.pow(data[index].value - mean, 2);
+  }
+  return Math.sqrt(sumSquareDeviation / data.length);
 }
 ```
 
@@ -171,23 +171,23 @@ Lastly, the code groups each monkey by standard deviations for the x-axis and pl
 
 ```javascript title='bellCurve.js'
 generateHeightBellCurve() {
-    const data = this.generateHeightData();
-    const meanHeight = this.computeMean(data);
-    const standardDeviationHeight = this.computeStandardDeviation(data, meanHeight);
-    const bellCurveData = {};
-    for(let index = 0; index < data.length; index++) {
-        data[index].standardDeviations = Math.round((data[index].value - meanHeight) / standardDeviationHeight);
-        if(!bellCurveData[data[index].standardDeviations]) {
-            bellCurveData[data[index].standardDeviations] = {
-                standardDeviations: data[index].standardDeviations,
-                count: 1
-            }
-        }
-        else {
-            bellCurveData[data[index].standardDeviations].count++;
-        }
+  const data = this.generateHeightData();
+  const meanHeight = this.computeMean(data);
+  const standardDeviationHeight = this.computeStandardDeviation(data, meanHeight);
+  const bellCurveData = {};
+  for(let index = 0; index < data.length; index++) {
+    data[index].standardDeviations = Math.round((data[index].value - meanHeight) / standardDeviationHeight);
+    if(!bellCurveData[data[index].standardDeviations]) {
+      bellCurveData[data[index].standardDeviations] = {
+        standardDeviations: data[index].standardDeviations,
+        count: 1
+      }
     }
-    return Object.keys(bellCurveData).map(key => bellCurveData[key]).sort((one, other) => { return one.standardDeviations - other.standardDeviations });
+    else {
+      bellCurveData[data[index].standardDeviations].count++;
+    }
+  }
+  return Object.keys(bellCurveData).map(key => bellCurveData[key]).sort((one, other) => { return one.standardDeviations - other.standardDeviations });
 }
 ```
 

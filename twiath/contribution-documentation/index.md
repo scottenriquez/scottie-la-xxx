@@ -112,10 +112,10 @@ The section wrapped in `---` is called the slug. It contains metadata for queryi
 ├── assets
 │   └── champion.png
 └── blog
-    └── posts
-        └── contribution-documentation
-            ├── image.png
-            └── index.md
+  └── posts
+    └── contribution-documentation
+      ├── image.png
+      └── index.md
 ```
 
 ## MDX

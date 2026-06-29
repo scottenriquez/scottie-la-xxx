@@ -19,7 +19,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json,css,scss}\"",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json,css,scss}\""
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json,css,scss}\"",
+    "format:code-blocks": "node scripts/normalizeCodeBlockIndentation.ts blog twiath",
+    "format:code-blocks:check": "node scripts/normalizeCodeBlockIndentation.ts --check blog twiath"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",

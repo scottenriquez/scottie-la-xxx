@@ -8,7 +8,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    include: ['src/**/*.{test,spec}.{ts,tsx}', 'scripts/**/*.{test,spec}.ts'],
     alias: [
       { find: /.*\.svg$/, replacement: path.resolve(__dirname, 'src/test/mocks/Svg.tsx') },
       { find: '@theme/Heading', replacement: path.resolve(__dirname, 'src/test/mocks/Heading.tsx') },

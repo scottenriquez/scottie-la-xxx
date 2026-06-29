@@ -126,7 +126,7 @@ kubectl get pods -o wide
 # entering BusyBox container shell to communicate with pods in the cluster
 kubectl run -it --rm --restart=Never busybox --image=busybox sh
 # replace the IP address as needed
-wget 192.168.51.32
+wget '192.168.51.32'
 # displys the nginx homepage code
 cat index.html
 # returning to default shell and deletes the BusyBox pod
@@ -566,8 +566,8 @@ kubectl delete deployment inflate
 helm uninstall karpenter --namespace "${KARPENTER_NAMESPACE}"
 aws cloudformation delete-stack --stack-name "Karpenter-${CLUSTER_NAME}"
 aws ec2 describe-launch-templates --filters Name=tag:karpenter.k8s.aws/cluster,Values=${CLUSTER_NAME} |
-    jq -r ".LaunchTemplates[].LaunchTemplateName" |
-    xargs -I{} aws ec2 delete-launch-template --launch-template-name {}
+  jq -r ".LaunchTemplates[].LaunchTemplateName" |
+  xargs -I{} aws ec2 delete-launch-template --launch-template-name {}
 eksctl delete cluster --name "${CLUSTER_NAME}"
 ```
 
@@ -585,13 +585,13 @@ In practice, this goes as follows:
 eksctl utils associate-iam-oidc-provider --cluster learning-kubernetes --approve
 # install aws-ebs-csi-driver
 eksctl create iamserviceaccount \
-    --name ebs-csi-controller-sa \
-    --namespace kube-system \
-    --cluster learning-kubernetes \
-    --role-name AmazonEKS_EBS_CSI_DriverRole \
-    --role-only \
-    --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
-    --approve
+  --name ebs-csi-controller-sa \
+  --namespace kube-system \
+  --cluster learning-kubernetes \
+  --role-name AmazonEKS_EBS_CSI_DriverRole \
+  --role-only \
+  --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+  --approve
 eksctl create addon --name aws-ebs-csi-driver --cluster learning-kubernetes --service-account-role-arn arn:aws:iam::$AWS_ACCOUNT_ID:role/AmazonEKS_EBS_CSI_DriverRole --force
 ```
 
@@ -1300,18 +1300,18 @@ kubectl get pods -o wide
 kubectl exec -it pod-three -- sh
 # ping pod-one and pod-two IP address (replace with yours)
 # these commands should hang
-ping 192.168.2.246
-ping 192.168.21.2
+ping '192.168.2.246'
+ping '192.168.21.2'
 # returning to default shell
 exit
 # enter pod-one shell
 kubectl exec -it pod-one -- sh
 # ping pod-two IP address (replace with yours)
 # this command should be successful
-ping 192.168.21.2
+ping '192.168.21.2'
 # ping pod-three IP address (replace with yours)
 # this command should hang
-ping 192.168.71.123
+ping '192.168.71.123'
 ```
 
 ## 22: ArgoCD

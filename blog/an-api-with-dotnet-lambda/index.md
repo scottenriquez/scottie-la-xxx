@@ -61,10 +61,10 @@ At the time of writing, the generated CDK template uses .NET Core 3.1. Inside of
 
 ```xml title='LambdaApiSolution/src/LambdaApiSolution/LambdaApiSolution.csproj'
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
 </Project>
 ```
 

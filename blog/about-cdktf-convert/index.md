@@ -133,7 +133,7 @@ apparent to me how to code this manually.
 
 ```typescript title='provider.ts'
 new AwsProvider(this, 'aws', {
-    region: 'us-east-1',
+  region: 'us-east-1',
 });
 ```
 
@@ -163,8 +163,8 @@ the snippet below, a Lambda function resource is created based on whether an S3 
 
 ```hcl title='conditional-count-example.tf'
 resource "aws_lambda_function" "local_zipfile" {
-    count = var.function_s3_bucket == "" ? 1 : 0
-    filename = var.function_zipfile
+  count = var.function_s3_bucket == "" ? 1 : 0
+  filename = var.function_zipfile
 }
 ```
 
@@ -193,11 +193,11 @@ This converts to the following TypeScript:
 
 ```typescript title='maxExample.ts'
 new aws.Instance(this, 'ec2_instance', {
-    ami: 'ami-0c2b8ca1dad447f8a',
-    instanceType: 't2.micro',
-    tags: {
-        name: 'Server ${max(1, 2, 12)}',
-    },
+  ami: 'ami-0c2b8ca1dad447f8a',
+  instanceType: 't2.micro',
+  tags: {
+    name: 'Server ${max(1, 2, 12)}',
+  },
 });
 ```
 

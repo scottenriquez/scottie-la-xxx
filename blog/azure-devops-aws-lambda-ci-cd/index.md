@@ -74,7 +74,7 @@ With this in place, wire up everything in the `package.json` with the proper tes
 ```json title='package.json'
 ...
 "scripts": {
-    "test": "nyc --reporter=text mocha"
+  "test": "nyc --reporter=text mocha"
 },
 ...
 ```
