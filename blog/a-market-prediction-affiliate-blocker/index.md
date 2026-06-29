@@ -3,7 +3,7 @@ authors: [scottenriquez]
 title: Measuring the Impact of Gambling Affiliates in My Social Media
 date: '2026-02-01'
 description: 'Building a Chrome extension to block and track market prediction affiliate accounts'
-tags: ['Programming', 'Economics']
+tags: ['Technology and Programming', 'Economics']
 ---
 
 import PieChart from '../../src/components/Shared/d3/pieChart'

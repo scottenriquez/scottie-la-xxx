@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Cloud9 IDE Configuration
 date: '2020-11-08'
-description: 'Scripts for preparing a cloud-hosted IDE in AWS.'
-tags: ['Cloud', 'Programming']
+description: 'Scripts for preparing a cloud-hosted IDE in AWS'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Cloud9 Overview and Use Cases

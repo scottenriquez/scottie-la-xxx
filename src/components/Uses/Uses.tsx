@@ -64,7 +64,7 @@ const categories: UsesCategory[] = [
         name: 'dotfiles',
         detail: (
           <>
-            Shell, editor, and terminal configuration on{' '}
+            My shell, editor, and terminal configuration are available on{' '}
             <Link to="https://github.com/scottenriquez/dotfiles" target="_blank" rel="noopener noreferrer">
               GitHub
             </Link>

@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Fantasy Football Power Rankings Markdown Generator
 date: '2020-08-21'
-description: "A CLI for creating posts for my league's fantasy football site."
-tags: ['Programming']
+description: "A CLI for creating posts for my league's fantasy football site"
+tags: ['Technology and Programming']
 ---
 
 ## Overview

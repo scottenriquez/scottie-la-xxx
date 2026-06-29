@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Becoming More Human in an Increasingly AI World
 date: '2025-05-09'
-description: 'My current thoughts on the state of artificial intelligence.'
-tags: ['Personal', 'Technology']
+description: 'My current thoughts on the state of artificial intelligence'
+tags: ['Life and Personal', 'Technology and Programming']
 ---
 
 I'm tired. Existentially.

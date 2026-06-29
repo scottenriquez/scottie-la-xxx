@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: 'Travel Diary: Japan 2016'
 date: '2016-06-05'
-description: 'A detailed log from my second journey to Japan.'
+description: 'A detailed log from my second journey to Japan'
 tags: ['Travel']
 ---
 

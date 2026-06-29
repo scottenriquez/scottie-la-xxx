@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: AWS re:Invent 2022
 date: '2022-11-29'
-description: 'Thoughts and proofs-of-concepts from re:Invent 2022 releases.'
+description: 'Thoughts and proofs-of-concepts from re:Invent 2022 releases'
 tags: ['Cloud']
 ---
 

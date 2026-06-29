@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: 'The Nature of Code Companion Series: Chapter One'
 date: '2024-05-25'
-description: "A companion for chapter one of Daniel Shiffman's book."
-tags: ['Programming']
+description: "A companion for chapter one of Daniel Shiffman's book"
+tags: ['Technology and Programming']
 ---
 
 import BouncingSphere from '../../src/components/NatureOfCode/One/BouncingSphere/bouncingSphere';

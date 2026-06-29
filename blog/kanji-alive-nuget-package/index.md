@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Kanji Alive NuGet Package
 date: '2016-11-27'
-description: 'A NuGet package for the Kanji Alive project.'
-tags: ['Japanese', 'Programming']
+description: 'A NuGet package for the Kanji Alive project'
+tags: ['Japanese', 'Technology and Programming']
 ---
 
 ## Overview

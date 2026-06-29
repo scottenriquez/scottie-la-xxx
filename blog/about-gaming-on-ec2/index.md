@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: Gaming on EC2
 date: '2019-03-17'
-description: 'Creating a gaming rig on AWS.'
+description: 'Creating a gaming rig on AWS'
 tags: ['Cloud']
 ---
 

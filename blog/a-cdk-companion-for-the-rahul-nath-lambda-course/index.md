@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: A CDK Companion for Rahul Nath's .NET Lambda Course
 date: '2022-06-17'
-description: 'CDK examples for .NET Lambda functions.'
-tags: ['Cloud', 'Programming']
+description: 'CDK examples for .NET Lambda functions'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## The Course and Companion

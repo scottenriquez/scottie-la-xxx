@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: 'SonarCloud for C# Projects with Travis CI'
 date: '2019-06-09'
-description: 'Example .NET project utilizing SonarCloud for continuous code inspection via Travis CI build.'
-tags: ['Programming']
+description: 'Example .NET project utilizing SonarCloud for continuous code inspection via Travis CI build'
+tags: ['Technology and Programming']
 ---
 
 ## Example SonarCloud/SonarScanner C# Integration for Travis CI

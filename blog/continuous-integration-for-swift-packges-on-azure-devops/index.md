@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Continuous Integration for Swift Packages in Azure DevOps
 date: '2020-08-04'
-description: 'Building CI for Swift packages using Azure Pipelines.'
-tags: ['Programming']
+description: 'Building CI for Swift packages using Azure Pipelines'
+tags: ['Technology and Programming']
 ---
 
 ## Overview

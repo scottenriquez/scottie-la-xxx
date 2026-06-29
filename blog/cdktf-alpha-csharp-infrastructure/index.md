@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: 'Exploring CDK for Terraform for .NET'
 date: '2021-05-15'
-description: 'Testing the alpha version of CDK for Terraform.'
-tags: ['Cloud', 'Programming']
+description: 'Testing the alpha version of CDK for Terraform'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Overview

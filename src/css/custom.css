@@ -225,6 +225,12 @@ article table td {
   margin: 0;
 }
 
+.markdown img.image-left,
+.markdown a.image-left img {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .markdown img.sleeper-avatar {
   display: inline-block;
   height: 1.5em;

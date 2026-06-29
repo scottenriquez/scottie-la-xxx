@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: '.NET 5 Docker Lambda Function with API Gateway and Self-Mutating Pipeline Using CDK'
 date: '2021-02-11'
-description: 'A step-by-step walkthrough for creating a multi-environment API using .NET 5, CDK, Docker, and Lambda.'
-tags: ['Cloud', 'Programming']
+description: 'A step-by-step walkthrough for creating a multi-environment API using .NET 5, CDK, Docker, and Lambda'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Deciding on Which Technology to Use

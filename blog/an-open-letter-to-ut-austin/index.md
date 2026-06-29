@@ -3,7 +3,7 @@ authors: [scottenriquez]
 title: 'An Open Letter to the University of Texas at Austin'
 date: '2025-10-18'
 description: 'A plea to reject the Compact'
-tags: ['Personal']
+tags: ['Life and Personal']
 ---
 
 ## A Hill Worth Dying On

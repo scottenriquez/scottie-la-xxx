@@ -2,8 +2,8 @@
 authors: [ scottenriquez ]
 title: 'Using the New Terraform for CDK Convert Feature'
 date: '2021-08-02'
-description: 'Testing the new CDKTF 0.5 feature.'
-tags: [ 'Cloud', 'Programming' ]
+description: 'Testing the new CDKTF 0.5 feature'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 I previously wrote [a blog post](https://scottie.is/blog/cdktf-alpha-csharp-infrastructure/) about getting started with

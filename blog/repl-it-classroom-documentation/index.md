@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Using Repl.it in a High School Classroom
 date: '2020-07-30'
-description: 'Configuring a classroom environment in Repl.it for high school computer science.'
-tags: ['Programming', 'Teaching']
+description: 'Configuring a classroom environment in Repl.it for high school computer science'
+tags: ['Technology and Programming', 'Teaching']
 ---
 
 ## Background
@@ -75,4 +75,4 @@ run = "javac Main.java && java Main"
 
 ## Fork the Project
 
-[![Run on Repl.it](https://repl.it/badge/github/teals-heights-high-school/repl-it-example)](https://repl.it/github/teals-heights-high-school/repl-it-example)
+<a href="https://repl.it/github/teals-heights-high-school/repl-it-example"><img className="image-left" src="https://repl.it/badge/github/teals-heights-high-school/repl-it-example" alt="Run on Repl.it" /></a>

@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Writing Cost-Conscious Terraform Using Infracost and AWS Developer Tools
 date: '2022-07-16'
-description: 'A CI/CD pipeline that alerts Terraform developers of cost increases.'
-tags: ['Cloud', 'Programming']
+description: 'A CI/CD pipeline that alerts Terraform developers of cost increases'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Solution Overview

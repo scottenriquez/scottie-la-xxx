@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Getting Started with Python and Flask on AWS
 date: '2015-12-13'
-description: 'A quick guide for getting a RESTful API set up using Flask on Amazon Web Services.'
-tags: ['Cloud', 'Programming']
+description: 'A quick guide for getting a RESTful API set up using Flask on Amazon Web Services'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Getting Started: Convention Over Configuration

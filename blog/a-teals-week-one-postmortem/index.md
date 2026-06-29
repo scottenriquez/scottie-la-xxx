@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: TEALS Week One Postmortem
 date: '2018-09-03'
-description: 'Successes and lessons learned during my first week of teaching computer science.'
+description: 'Successes and lessons learned during my first week of teaching computer science'
 tags: ['Teaching']
 ---
 

@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: 'Preparing for the Certified Kubernetes Application Developer (CKAD) Exam Using Amazon EKS'
 date: '2024-08-08'
-description: 'A companion for learning Kubernetes in the AWS ecosystem.'
-tags: ['Cloud', 'Programming']
+description: 'A companion for learning Kubernetes in the AWS ecosystem'
+tags: ['Cloud', 'Technology and Programming']
 ---
 
 ## Motivation and Background

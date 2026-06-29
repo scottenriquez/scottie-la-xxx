@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: An Integrated Approach to Japanese Study
 date: '2012-12-15'
-description: 'A guide for intermediate Japanese study.'
+description: 'A guide for intermediate Japanese study'
 tags: ['Japanese']
 ---
 

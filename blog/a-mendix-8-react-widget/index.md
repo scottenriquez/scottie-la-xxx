@@ -2,8 +2,8 @@
 authors: [scottenriquez]
 title: Building a React Widget for Mendix 8
 date: '2019-11-20'
-description: 'Bringing the Ace editor to Mendix.'
-tags: ['Mendix', 'Programming']
+description: 'Bringing the Ace editor to Mendix'
+tags: ['Technology and Programming']
 ---
 
 ## Use Case, Source Code, and Demo Site

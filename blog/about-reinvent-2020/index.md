@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: 'AWS re:Invent 2020'
 date: '2020-12-01'
-description: 'Thoughts and proofs-of-concepts from AWS re:Invent 2020.'
+description: 'Thoughts and proofs-of-concepts from AWS re:Invent 2020'
 tags: ['Cloud']
 ---
 

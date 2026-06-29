@@ -2,7 +2,7 @@
 authors: [scottenriquez]
 title: Microsoft Ignite 2019
 date: '2019-11-04'
-description: 'Thoughts and proofs-of-concepts from Microsoft Ignite 2019 in Orlando.'
+description: 'Thoughts and proofs-of-concepts from Microsoft Ignite 2019 in Orlando'
 tags: ['Cloud']
 ---
 
