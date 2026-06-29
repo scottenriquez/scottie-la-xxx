@@ -19,6 +19,7 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  width: fit-content;
   max-width: 560px;
   display: flex;
   flex-direction: column;
