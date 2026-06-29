@@ -10,7 +10,6 @@ type Program = {
   field: string;
   years: string;
   homepageUrl: string;
-  logoClassName?: string;
 };
 
 const programs: Program[] = [
@@ -21,7 +20,6 @@ const programs: Program[] = [
     field: 'Computer Science and Asian Studies',
     years: '2008 to 2013',
     homepageUrl: 'https://www.utexas.edu/',
-    logoClassName: 'logoWide',
   },
   {
     logoFileName: 'usc.svg',
@@ -50,11 +48,7 @@ export default function Education(): ReactNode {
               aria-label={program.school}
               className={styles.logo}
             >
-              <img
-                src={withBaseUrl(`/img/education/${program.logoFileName}`)}
-                alt={program.school}
-                className={program.logoClassName ? styles[program.logoClassName] : undefined}
-              />
+              <img src={withBaseUrl(`/img/education/${program.logoFileName}`)} alt={program.school} />
             </Link>
             <div>
               <p className={styles.school}>{program.school}</p>
