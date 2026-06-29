@@ -74,12 +74,17 @@
 .degree {
   margin: 0.2rem 0 0;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.4;
+}
+
+.degreeName {
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .years {
   margin: 0.2rem 0 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--ifm-color-emphasis-600);
 }

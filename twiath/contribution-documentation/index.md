@@ -6,10 +6,6 @@ authors: [scottie]
 tags: ['Contributing', 'Documentation']
 ---
 
-## Frontend Build Status
-
-[![Netlify](https://api.netlify.com/api/v1/badges/a5908d92-3e04-4353-8375-ccf634b9e1cd/deploy-status)](https://app.netlify.com/sites/scottie-is/deploys)
-
 ## Overview
 
 The Winner Is a Tryhard is now a Docusaurus site hosted on Netlify replacing the vanilla React frontend and Lambda backend for serving dynamic content. It uses Markdown (or MDX) syntax for writing blog posts, which should streamline the writing process for everyone. By utilizing the pull request system on GitHub, the publishing process will also be self-service thanks to the Netlify CI/CD tooling. This documentation will cover:
@@ -36,7 +32,7 @@ Make sure you have the following software installed:
 
 Test to make sure your software is installed correctly by running a few commands. Assuming the following statements return version numbers instead of throwing errors, everything installed successfully.
 
-```shell
+```shell title='check-dependencies.sh'
 git --version
 node --version
 npm --version
@@ -46,7 +42,7 @@ npm --version
 
 In order to push commits to the remote origin from your local machine, you'll need to [create a new SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add the key to your account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Set up your global name and email on your machine as well.
 
-```shell
+```shell title='configure-git.sh'
 git config --global user.name "Your Name"
 git config --global user.email "youremail@yourdomain.com"
 ```
@@ -55,9 +51,8 @@ git config --global user.email "youremail@yourdomain.com"
 
 With the previous steps completed, you can now clone the repository to your local machine and start the local web server.
 
-```shell
-git clone https://github.com/scottenriquez/scottie-is-xxx-v3.git
-cd scottie-is-xxx
+```shell title='install.sh'
+git clone https://github.com/scottenriquez/scottie-la-xxx 
 npm run start
 ```
 
@@ -67,7 +62,7 @@ Navigate to `http://localhost:3000` in the browser.
 
 If your terminal or editor doesn't automatically show you which branch you're working in, use the `git status` command to find out. Don't commit any new posts directly to the `main` branch. Instead, create a new branch for a specific purpose (i.e., `scottie-power-rankings-week-one`) locally and push it to the remote origin.
 
-```shell
+```shell title='branch.sh'
 git checkout -b scottie-power-rankings-week-one
 git push origin -u scottie-power-rankings-week-one
 ```
@@ -76,7 +71,7 @@ git push origin -u scottie-power-rankings-week-one
 
 Use the power rankings CLI to generate new posts. The generated template lists each league member with fantasy football data from Sleeper and their avatars stored on a CDN.
 
-```markdown
+```markdown title='example.md'
 ---
 title: "Scottie's Week One Power Rankings"
 date: '2020-08-22'
@@ -127,13 +122,13 @@ The section wrapped in `---` is called the slug. It contains metadata for queryi
 
 This site is configured to support MDX. MDX adds a new dimension of features in Markdown pages by seamlessly integrating JSX, which allows for writing HTML inside of JavaScript statements.
 
-```jsx
+```jsx title='example.js'
 const element = <h1>Hello, world!</h1>;
 ```
 
 Markdown syntax is simple and allows for content structuring, but the ability to write JavaScript inside of it allows for dynamic content such as charts and HTTP calls. The MDX syntax for adding React components is straightforward.
 
-```markdown
+```markdown title='mdx-example.md'
 import MyReactComponent from '../src/components/myReactComponent'
 
 # H1 Text
@@ -147,7 +142,7 @@ This gets wrapped in a <p> tag.
 
 Once you've finished writing your content, publishing your changes is automated via CI/CD. First, commit and push to your branch.
 
-```shell
+```shell title='deploy.sh'
 git add .
 git commit -m "Adding my super thoughtful power rankings"
 git push origin scottie-power-rankings-week-one
@@ -159,15 +154,11 @@ From the GitHub web UI, open a pull request and select your branch with the chan
 
 `spr` is a CLI tool for generating Markdown pages in the [league site](https://scottie.is/blog-about-fantasy-football) for power rankings posts with Sleeper data injected. The source code is hosted on [GitHub](https://github.com/the-winner-is-a-tryhard/power-rankings-markdown-cli).
 
-## Build Status
-
-[![Azure Pipelines](https://dev.azure.com/scottenriquez/Sleeper%20Power%20Rankings%20Markdown%20CLI/_apis/build/status/the-winner-is-a-tryhard.power-rankings-markdown-cli?branchName=master)](https://dev.azure.com/scottenriquez/Sleeper%20Power%20Rankings%20Markdown%20CLI/_build/latest?definitionId=5&branchName=master)
-
 ## Installation and Dependencies
 
 Clone the repository, install NPM dependencies, and create a symlink in the global folder.
 
-```shell
+```shell title='install.sh'
 git clone git@github.com:the-winner-is-a-tryhard/power-rankings-markdown-cli.git
 cd power-rankings-markdown-cli
 npm install
@@ -177,7 +168,7 @@ spr --version
 
 The CLI source code doesn't store any secrets, so ensure that the AWS CLI is installed and that the credentials are configured at `~/.aws/credentials`.
 
-```shell
+```shell title='.aws/credentials'
 [default]
 aws_access_key_id=AKIAIOSFODNN7EXAMPLE
 aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -204,7 +195,7 @@ The league-specific details exist in various JavaScript configuration files to m
 
 ### Frontend
 
-```javascript title='/lib/config/frontend.js'
+```javascript title='lib/config/frontend.js'
 const frontend = {
   // used to determine if the user created a new branch
   mainBranchName: 'main',
@@ -219,7 +210,7 @@ const frontend = {
 
 ### AWS
 
-```javascript title='/lib/config/aws.js'
+```javascript title='lib/config/aws.js'
 const awsConfig = {
   // S3 bucket
   bucketName: 'twiath-site-cdn',
@@ -230,7 +221,7 @@ const awsConfig = {
 
 ### League
 
-```javascript title='/lib/config/league.js'
+```javascript title='lib/config/league.js'
 const league = {
   // Sleeper league ID number
   id: '541384381865115648',
@@ -239,7 +230,7 @@ const league = {
 
 ### Authors
 
-```javascript title='/lib/config/validAuthors.js'
+```javascript title='lib/config/validAuthors.js'
 const authors = {
   Scottie: 'Scottie Enriquez',
   Callen: 'Callen Trail',
@@ -258,7 +249,7 @@ const authors = {
 
 ### Weeks
 
-```javascript title='/lib/config/validWeeks.js'
+```javascript title='lib/config/validWeeks.js'
 const weeks = {
   0: 'zero',
   1: 'one',

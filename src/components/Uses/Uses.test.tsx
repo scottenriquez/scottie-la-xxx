@@ -22,7 +22,7 @@ describe('Uses', () => {
 
     for (const name of [
       'MacBook Pro (16-Inch)',
-      'Pro Display XDR',
+      'Studio Display XDR',
       'PyCharm (JetBrains)',
       'WebStorm (JetBrains)',
       'Neovim',

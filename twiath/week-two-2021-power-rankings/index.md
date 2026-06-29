@@ -70,7 +70,7 @@ This feels weird. I usually write these power rankings from the top down. By the
 
 #### Week Two Points: 87.6
 
-> Well, Mitchell's $30 per point is better than when K-Man spent $200 per point on Nyheim Hines.
+> Well, Mitchell's \$30 per point is better than when K-Man spent \$200 per point on Nyheim Hines.
 
 It is well known that I'm a hater, so it's with great pleasure that I get to rip on this team. Let's get this straight: without Texas A&M legend Kyler Murray propping up this roster, this would have been a blowout of Joey Burrow versus OU proportions. In addition, Logz now has about as much money as Adrian Peterson after blowing his FAAB on a bigger dud than Spencer Rattler. That's four back-to-back-to-back-to-back OU jokes. Coincidentally, that's the number of Oklahoma's first-round playoff losses too.
 

@@ -93,7 +93,7 @@ Notice any usual suspects? I'll save that part for the power rankings.
 For any nerds that want to do some data exploration, I've deployed the data lake to our production league AWS account.
 Assuming that you have Python installed, the following Bash script will prepare your environment:
 
-```shell title='configure-environment.sh
+```shell title='configure-environment.sh'
 python3 -m venv '.venv'
 . .venv/bin/activate
 pip install pandas pyarrow s3fs

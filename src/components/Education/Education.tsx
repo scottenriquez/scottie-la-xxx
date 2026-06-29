@@ -7,6 +7,7 @@ type Program = {
   logoFileName: string;
   school: string;
   degree: string;
+  field: string;
   years: string;
   homepageUrl: string;
   logoClassName?: string;
@@ -16,7 +17,8 @@ const programs: Program[] = [
   {
     logoFileName: 'texas.svg',
     school: 'University of Texas at Austin',
-    degree: 'Bachelor of Arts, Computer Science and Asian Studies',
+    degree: 'Bachelor of Arts',
+    field: 'Computer Science and Asian Studies',
     years: '2008 to 2013',
     homepageUrl: 'https://www.utexas.edu/',
     logoClassName: 'logoWide',
@@ -24,7 +26,8 @@ const programs: Program[] = [
   {
     logoFileName: 'usc.svg',
     school: 'University of Southern California',
-    degree: 'Master of Science, Applied Data Science',
+    degree: 'Master of Science',
+    field: 'Applied Data Science',
     years: '2025 to present',
     homepageUrl: 'https://www.usc.edu/',
   },
@@ -53,9 +56,13 @@ export default function Education(): ReactNode {
                 className={program.logoClassName ? styles[program.logoClassName] : undefined}
               />
             </Link>
-            <div className={styles.details}>
+            <div>
               <p className={styles.school}>{program.school}</p>
-              <p className={styles.degree}>{program.degree}</p>
+              <p className={styles.degree}>
+                <span className={styles.degreeName}>{program.degree}</span>
+                <br />
+                {program.field}
+              </p>
               <p className={styles.years}>{program.years}</p>
             </div>
           </li>

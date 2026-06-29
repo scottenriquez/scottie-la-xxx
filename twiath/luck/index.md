@@ -85,7 +85,7 @@ So, does regular season PF correlate with championships? For the most part, yes.
 
 First, we need to compute points against for each week in the Pandas `DataFrame` since this is not available in the API:
 
-```python
+```python title='calculate.py'
 def calculate_points_against(row):
     points_against = matchups.loc[matchups['year'] == row['year']] \
         .loc[matchups['week'] == row['week'] \
@@ -118,7 +118,7 @@ Where:
 
 Or expressed in Python with the Pandas `DataFrame`:
 
-```python
+```python title='calculate.py'
 def calculate_weekly_wins_against_all_opponents(row):
     other_player_points = list(matchups.loc[matchups['year'] == row['year']] \
         .loc[matchups['week'] == row['week']] \
@@ -141,7 +141,7 @@ Over time, this metric largely correlates with PF. At the top, Scottie leads thi
 
 Using Pandas, we can query the total number of actual wins and wins against all opponents ($$w_o$$) and group by player and season.
 
-```python
+```python title='calculate.py'
 matchups.loc[matchups['type'] == 'regular'] /
     .groupby(['username', 'year']) \
     .agg({'actual_win_loss':'sum','wins_against_all_opponents':'sum'})
@@ -191,7 +191,7 @@ Sure enough, Mark's team benefited in the same way as Andrew's: four wins in whi
 
 Since $$w_o$$ values range from 0 to 11, the unluckiest outcome is to score higher than ten other teams and still lose. By the same token, the luckiest would be to outscore only one team and still win. These have happened several times over the past four years. First, the $$w_o=10$$ losses:
 
-```python
+```python title='calculate.py'
 matchups.loc[matchups['type'] == 'regular'] \
     .loc[matchups['wins_against_all_opponents'] == 10] \
     .loc[matchups['actual_win_loss'] == 0] \
@@ -210,7 +210,7 @@ matchups.loc[matchups['type'] == 'regular'] \
 
 Next, the $$w_o=1$$ wins:
 
-```python
+```python title='calculate.py'
 matchups.loc[matchups['type'] == 'regular'] \
     .loc[matchups['wins_against_all_opponents'] == 1] \
     .loc[matchups['actual_win_loss'] == 1] \

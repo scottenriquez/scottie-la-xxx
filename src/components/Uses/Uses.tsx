@@ -31,7 +31,7 @@ const categories: UsesCategory[] = [
         icon: <BrandIcon icon={siApple} />,
       },
       {
-        name: 'Pro Display XDR',
+        name: 'Studio Display XDR',
         detail: '32-inch 6K Retina model',
         icon: <BrandIcon icon={siApple} />,
       },

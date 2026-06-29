@@ -11,7 +11,7 @@ describe('Tag', () => {
 
   it('renders the laptop-code icon for the Technology and Programming theme', () => {
     const { container } = render(
-      <Tag permalink="/tags/technology-and-programming" label="Technology and Programming" />,
+      <Tag permalink="/tags/technology-and-programming" label="Technology and Programming" />
     );
 
     expect(container.querySelector('svg.svg-inline--fa')?.getAttribute('data-icon')).toBe('laptop-code');
