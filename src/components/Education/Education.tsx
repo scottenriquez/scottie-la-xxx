@@ -8,25 +8,24 @@ type Program = {
   school: string;
   degree: string;
   years: string;
-  chipColor: string;
   homepageUrl: string;
+  logoClassName?: string;
 };
 
 const programs: Program[] = [
   {
-    logoFileName: 'ut-austin.svg',
+    logoFileName: 'texas.svg',
     school: 'University of Texas at Austin',
     degree: 'Bachelor of Arts, Computer Science and Asian Studies',
     years: '2008 to 2013',
-    chipColor: 'var(--school-ut)',
     homepageUrl: 'https://www.utexas.edu/',
+    logoClassName: 'logoWide',
   },
   {
     logoFileName: 'usc.svg',
     school: 'University of Southern California',
     degree: 'Master of Science, Applied Data Science',
     years: '2025 to present',
-    chipColor: 'var(--school-usc-chip)',
     homepageUrl: 'https://www.usc.edu/',
   },
 ];
@@ -47,9 +46,12 @@ export default function Education(): ReactNode {
               rel="noopener noreferrer"
               aria-label={program.school}
               className={styles.logo}
-              style={{ backgroundColor: program.chipColor }}
             >
-              <img src={withBaseUrl(`/img/education/${program.logoFileName}`)} alt={program.school} />
+              <img
+                src={withBaseUrl(`/img/education/${program.logoFileName}`)}
+                alt={program.school}
+                className={program.logoClassName ? styles[program.logoClassName] : undefined}
+              />
             </Link>
             <div className={styles.details}>
               <p className={styles.school}>{program.school}</p>
